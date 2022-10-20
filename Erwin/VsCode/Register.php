@@ -4,41 +4,40 @@
        <title>Registration</title>
 
        <?php
-            require 'Header.php'
+            require 'Header-index.php'
        ?>
 
     </head>    
 
-    <style>
-        .text{
-            width: 350px;
-            height: 50px;
-            border-radius: 5px;
+    <style>      
+      .textbox{
+        width: 350px;
+        height: 50px;
+        border-radius: 5px;
 
-            border-width: thin; 
-            border-color: round;
-            
-            padding-left:20px;
+        border-width: thin;
+        border-color: round;
+        
+        padding-left:20px;
 
-            margin-top:10px;
-            margin-bottom:10px;
-        }
+        margin-top:10px;
+        margin-bottom:10px;
+      }
+      .submit{
+          width: 350px;
+          height: 50px;
+          border-radius: 5px;
+          color:white;
+          background-color: red;
 
-        .submit{
-            width: 350px;
-            height: 50px;
-            border-radius: 5px;
-            color:white;
-            background-color: red;
+          font-size:25px;
 
-            font-size:25px;
+          border-width: thin; 
+          border-color: round;
 
-            border-width: thin; 
-            border-color: round;
-
-            margin-top:10px;
-            margin-bottom:10px;
-        }
+          margin-top:10px;
+          margin-bottom:10px;
+      }
     </style>
 
     <script>
@@ -47,15 +46,18 @@
 
 
     <body>
-        <div class="Row text-center fontfamily">
-    
+      <div class="row justify-content-center">
+        <div class="text-center">
             <h1 style="margin-top:30px; font-weight:bold;">Register</h1>
             <form action="registercheck.php" method="post">
-                <input class="text" type="text" placeholder="Enter Your Email" name="email"><br>
-                <input class="text" type="text" placeholder="Password" name="password"><br>
+                <input class="textbox" type="email" placeholder="Enter Your Email" name="email"><br>
+                <input class="textbox" type="text" placeholder="Password" name="password"><br>
                 <input class="submit" type="submit" value="Register"> 
             </form>
-            
+            <hr>
+        <p style="margin-right:20px;">Already a Member?<a style="margin-left:5px; color:red;" href="Login.php">Login</a></p> 
         </div>
+      </div>
+
     </body>
 </html>
