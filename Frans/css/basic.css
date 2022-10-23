@@ -1,0 +1,77 @@
+.header {
+    font-family: 'Skranji', cursive;
+    font-size: x-large;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+  }
+
+  .white{
+    color: white;
+  }
+  .black{
+    color: black;
+  }
+
+  .topright {
+    text-decoration: none;
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+    color: black;
+    
+  }
+
+.bcolor {
+    background-color: #354f52;
+}
+
+  /* The navbar container */
+.topnav {
+    overflow: hidden;
+    background-color: #52796f;
+  }
+  
+  /* Navbar links */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  /* Links - change color on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .xxlarge{
+    font-size: xx-large;
+  }
+  .xlarge{
+    font-size: x-large;
+  }
+  .large{
+    font-size: large;
+  }
+
+  .row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 33.33%;
+    padding: 5px;
+  }
+
+  ol.myUL {
+    display: inline-block;
+    text-align: left;
+  }
