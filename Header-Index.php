@@ -88,15 +88,15 @@ $email = $_SESSION['email'];
         <a class="nav-link active text-white" aria-current="page" href="#">Profil Kerja</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="#">Daftar</a>
+        <a class="nav-link text-white" href="Register.php">Daftar</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="#">Masuk</a>
+        <a class="nav-link text-white" href="Login.php">Masuk</a>
       </li>
       <li>
         <div class="container-fluid">
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <form class="d-flex" role="search" action="SearchProduct.php" method="GET">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
             <button class="btn btn-light" type="submit">Search</button>
           </form>
         </div>
