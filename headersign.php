@@ -87,20 +87,6 @@ $email = $_SESSION['email'];
       <li class="nav-item">
         <a class="nav-link active text-white" aria-current="page" href="#">Profil Kerja</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" href="#">Daftar</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" href="#">Masuk</a>
-      </li>
-      <li>
-        <div class="container-fluid">
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-light" type="submit">Search</button>
-          </form>
-        </div>
-      </li>
     </ul>
   </div>
 
