@@ -85,7 +85,7 @@ $email = $_SESSION['email'];
   <div class="bg-success bg-gradient py-1">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link active text-white" aria-current="page" href="#">Profil Kerja</a>
+        <a class="nav-link active text-white" aria-current="page" href="index.php">Profil Kerja</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white" href="Register.php">Daftar</a>
@@ -103,7 +103,52 @@ $email = $_SESSION['email'];
       </li>
     </ul>
   </div>
-
+  <nav class="navbar navbar-expand-lg bg-light py-0">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse  justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="grafisdandesain.php" class="nav-link text-center"><img src="img/graphic-design.png" width="48" height="48">
+              <figcaption>Desain dan Grafis</figcaption>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="penulisandanpenerjemahan.php" class="nav-link text-center"><img src="img/typing.png" width="48" height="48">
+              <figcaption>Penulisan dan Penerjemahan</figcaption>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="webdanpemrograman.php" class="nav-link text-center"><img src="img/coding.png" width="48" height="48">
+              <figcaption>Web dan Pemrograman</figcaption>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="visualdanstudio.php" class="nav-link text-center"><img src="img/camera.png" width="48" height="48">
+              <figcaption>Visual dan Studio</figcaption>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="pemasarandanperiklanan.php" class="nav-link text-center"><img src="img/growth.png" width="48" height="48">
+              <figcaption>Pemasaran dan Periklanan</figcaption>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="jasakonsultasi.php" class="nav-link text-center"><img src="img/brainstorming.png" width="48" height="48">
+              <figcaption>Jasa Konsultasi</figcaption>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="gayahidup.php" class="nav-link text-center"><img src="img/lifestyle.png" width="48" height="48">
+              <figcaption>Gaya Hidup</figcaption>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 

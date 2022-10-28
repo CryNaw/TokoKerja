@@ -85,7 +85,7 @@ $email = $_SESSION['email'];
   <div class="bg-success bg-gradient py-1">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link active text-white" aria-current="page" href="#">Profil Kerja</a>
+        <a class="nav-link active text-white" aria-current="page" href="index.php">Profil Kerja</a>
       </li>
     </ul>
   </div>

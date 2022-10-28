@@ -1,4 +1,4 @@
-<?php 
+<?php
 require 'connectdatabase.php';
 
 session_start();
@@ -6,32 +6,22 @@ session_start();
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$sql = "SELECT * FROM user WHERE email='".$email."' ";
+$sql = "SELECT * FROM user WHERE email='" . $email . "' ";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0){
-  while($row = $result->fetch_assoc()){
-    if($password == $row["password"]){
-      if($row["verified"]==1){
+if ($result->num_rows > 0) {
+  while ($row = $result->fetch_assoc()) {
+    if ($password == $row["password"]) {
+      if ($row["verified"] == 1) {
         $_SESSION["email"] = $row["email"];
-        header('Location:searchproduct.php');
+        header('Location:home.php');
+      } else {
+        header('location:Login.php');
       }
-      else{
-        header('location:LoginCheckNotVerified.php');
-      }
-    }  
-    else{
+    } else {
       echo "Wrong Password";
     }
-
   }
-} 
-else{
-    echo "account not registered";
+} else {
+  echo "account not registered";
 }
-
-?>
-
-
-
-

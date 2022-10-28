@@ -51,11 +51,13 @@
         </div>
         <div class="col-md-6">
           <select class="textbox text-center" name="kategori">
-            <option value="illustration">Illustration</option>
-            <option value="logo">Logo</option>
-            <option value="website">Website</option>
-            <option value="voice_actor">Voice Actor</option>
-            <option value="application">Application</option>
+            <option value="desain_dan_grafis">Desain dan Grafis</option>
+            <option value="penulisan_dan_penerjemahan">Penulisan dan Penerjemahan</option>
+            <option value="web_dan_pemrograman">Web dan Pemrograman</option>
+            <option value="visual_dan_studio">Visual dan Studio</option>
+            <option value="pemasaran_dan_periklanan">Pemasaran dan Periklanan</option>
+            <option value="jasa_konsultasi">Jasa Konsultasi</option>
+            <option value="gaya_hidup">Gaya Hidup</option>
           </select>
         </div>
       </div>

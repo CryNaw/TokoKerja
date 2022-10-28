@@ -13,15 +13,17 @@
     <div class="bg-success bg-gradient">
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">Daftar</a>
+                <a class="nav-link text-white" href="Register.php">Daftar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">Masuk</a>
+                <a class="nav-link text-white" href="Login.php">Masuk</a>
             </li>
         </ul>
 
 
-        <h1 class="text-center text-white py-3">Profil Kerja</h1>
+        <a href="index.php" style="text-decoration:none;">
+            <h1 class="text-center text-white py-3">Profil Kerja</h1>
+        </a>
 
         <h2 class="text-center text-white py-3">Temukan freelancer yang sempurna untuk anda</h2>
 
@@ -44,37 +46,37 @@
             <div class="collapse navbar-collapse  justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="" class="nav-link text-center"><img src="img/graphic-design.png" width="48" height="48">
+                        <a href="grafisdandesain.php" class="nav-link text-center"><img src="img/graphic-design.png" width="48" height="48">
                             <figcaption>Desain dan Grafis</figcaption>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link text-center"><img src="img/typing.png" width="48" height="48">
+                        <a href="penulisandanpenerjemahan.php" class="nav-link text-center"><img src="img/typing.png" width="48" height="48">
                             <figcaption>Penulisan dan Penerjemahan</figcaption>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link text-center"><img src="img/coding.png" width="48" height="48">
+                        <a href="webdanpemrograman.php" class="nav-link text-center"><img src="img/coding.png" width="48" height="48">
                             <figcaption>Web dan Pemrograman</figcaption>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link text-center"><img src="img/camera.png" width="48" height="48">
+                        <a href="visualdanstudio.php" class="nav-link text-center"><img src="img/camera.png" width="48" height="48">
                             <figcaption>Visual dan Studio</figcaption>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link text-center"><img src="img/growth.png" width="48" height="48">
+                        <a href="pemasarandanperiklanan.php" class="nav-link text-center"><img src="img/growth.png" width="48" height="48">
                             <figcaption>Pemasaran dan Periklanan</figcaption>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link text-center"><img src="img/brainstorming.png" width="48" height="48">
+                        <a href="jasakonsultasi.php" class="nav-link text-center"><img src="img/brainstorming.png" width="48" height="48">
                             <figcaption>Jasa Konsultasi</figcaption>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link text-center"><img src="img/lifestyle.png" width="48" height="48">
+                        <a href="gayahidup.php" class="nav-link text-center"><img src="img/lifestyle.png" width="48" height="48">
                             <figcaption>Gaya Hidup</figcaption>
                         </a>
                     </li>
