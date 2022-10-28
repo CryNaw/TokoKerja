@@ -12,7 +12,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-success bg-gradient py-1">
         <div class="container-fluid">
-            <a class="navbar-brand text-white" href="#">Profil Kerja</a>
+            <a class="navbar-brand text-white" href="home.php">Profil Kerja</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,8 +29,8 @@
                             <li>
                                 <p><b class="px-2"> Selamat Datang! </b></p>
                             </li>
-                            <li><a class="dropdown-item" href="#">Biodata</a></li>
-                            <li><a class="dropdown-item" href="#">Log Out</a></li>
+                            <li><a class="dropdown-item" href="biodata.php">Biodata</a></li>
+                            <li><a class="dropdown-item" href="Login.php">Log Out</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -41,15 +41,16 @@
     <div class="bg-success bg-gradient">
         <h1 class="text-center text-white my-1 py-3">Profil Kerja</h1>
         <h2 class="text-center text-white py-3">Temukan freelancer yang sempurna untuk anda</h2>
+
+        <nav class="navbar">
+            <div class="container-fluid  justify-content-center">
+                <a class="navbar-brand"></a>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-light" type="submit">Search</button>
+                </form>
+            </div>
     </div>
-    <nav class="navbar">
-        <div class="container-fluid  justify-content-center">
-            <a class="navbar-brand"></a>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-light" type="submit">Search</button>
-            </form>
-        </div>
     </nav>
     <br>
     </div>
@@ -61,37 +62,37 @@
             <div class="collapse navbar-collapse  justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="" class="nav-link text-center"><img src="img/graphic-design.png" width="48" height="48">
+                        <a href="grafisdandesain.php" class="nav-link text-center"><img src="img/graphic-design.png" width="48" height="48">
                             <figcaption>Desain dan Grafis</figcaption>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link text-center"><img src="img/typing.png" width="48" height="48">
+                        <a href="penulisandanpenerjemahan.php" class="nav-link text-center"><img src="img/typing.png" width="48" height="48">
                             <figcaption>Penulisan dan Penerjemahan</figcaption>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link text-center"><img src="img/coding.png" width="48" height="48">
+                        <a href="webdanpemrograman.php" class="nav-link text-center"><img src="img/coding.png" width="48" height="48">
                             <figcaption>Web dan Pemrograman</figcaption>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link text-center"><img src="img/camera.png" width="48" height="48">
+                        <a href="visualdanstudio.php" class="nav-link text-center"><img src="img/camera.png" width="48" height="48">
                             <figcaption>Visual dan Studio</figcaption>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link text-center"><img src="img/growth.png" width="48" height="48">
+                        <a href="pemasarandanperiklanan.php" class="nav-link text-center"><img src="img/growth.png" width="48" height="48">
                             <figcaption>Pemasaran dan Periklanan</figcaption>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link text-center"><img src="img/brainstorming.png" width="48" height="48">
+                        <a href="jasakonsultasi.php" class="nav-link text-center"><img src="img/brainstorming.png" width="48" height="48">
                             <figcaption>Jasa Konsultasi</figcaption>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link text-center"><img src="img/lifestyle.png" width="48" height="48">
+                        <a href="gayahidup.php" class="nav-link text-center"><img src="img/lifestyle.png" width="48" height="48">
                             <figcaption>Gaya Hidup</figcaption>
                         </a>
                     </li>
