@@ -17,27 +17,27 @@ $xIncomingCallbackTokenHeader = isset($reqHeaders['x-callback-token']) ? $reqHea
 // Anda harus membandingkan token yang masuk sama dengan token verifikasi callback Anda
 // Ini untuk memastikan permintaan datang dari Xendit dan bukan dari pihak ketiga lainnya.
 // if($xIncomingCallbackTokenHeader === $xenditXCallbackToken){
-  // Permintaan masuk diverifikasi berasal dari Xendit
-    
-  // Baris ini untuk mendapatkan semua input pesan dalam format JSON teks mentah
-  $rawRequestInput = file_get_contents("php://input");
-  // Baris ini melakukan format input mentah menjadi array asosiatif
-  $arrRequestInput = json_decode($rawRequestInput, true);
-  echo 'iya sudah ada bang';
-  print_r($arrRequestInput);
-  
-  $_id = $arrRequestInput['id'];
-  $_externalId = $arrRequestInput['external_id'];
-  $_userId = $arrRequestInput['user_id'];
-  $_status = $arrRequestInput['status'];
-  $_paidAmount = $arrRequestInput['paid_amount'];
-  $_paidAt = $arrRequestInput['paid_at'];
-  $_paymentChannel = $arrRequestInput['payment_channel'];
-  $_paymentDestination = $arrRequestInput['payment_destination']; 
+// Permintaan masuk diverifikasi berasal dari Xendit
 
-  require 'ConnectDatabase.php';
-  $sql = "insert into xendit_log (ID) values ('".$_id."')";
-  $conn->query($sql);
+// Baris ini untuk mendapatkan semua input pesan dalam format JSON teks mentah
+$rawRequestInput = file_get_contents("php://input");
+// Baris ini melakukan format input mentah menjadi array asosiatif
+$arrRequestInput = json_decode($rawRequestInput, true);
+echo 'iya sudah ada bang';
+print_r($arrRequestInput);
+
+$_id = $arrRequestInput['id'];
+$_externalId = $arrRequestInput['external_id'];
+$_userId = $arrRequestInput['user_id'];
+$_status = $arrRequestInput['status'];
+$_paidAmount = $arrRequestInput['paid_amount'];
+$_paidAt = $arrRequestInput['paid_at'];
+$_paymentChannel = $arrRequestInput['payment_channel'];
+$_paymentDestination = $arrRequestInput['payment_destination'];
+
+require 'ConnectDatabase.php';
+$sql = "insert into xendit_log (ID) values ('" . $_id . "')";
+$conn->query($sql);
 
 
   // Kamu bisa menggunakan array objek diatas sebagai informasi callback yang dapat digunaka untuk melakukan pengecekan atau aktivas tertentu di aplikasi atau sistem kamu.
