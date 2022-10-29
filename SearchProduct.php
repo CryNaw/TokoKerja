@@ -62,17 +62,17 @@
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
       ?>
-          <a class="col-sm-3 col-md-2 border margin-10" style="color:black; text-decoration:none" href="">
-            <div class="row">
-              <img src=<?php echo $row['sample1'] ?> alt="Sample1" height="80%" width="100%">
+          <a class="col-4 col-md-4 col-lg-2" style="color:black; text-decoration:none" href="searchproduct.php?search=<?php echo $row['id'] ?>">
+            <div class="card h-100">
+              <img class="card-img-top" src=<?php echo $row['sample1'] ?> alt="Sample1">
+            
+              <div class="card-body">
+                <p class="card-title text-truncate text-ellipsis--2"><?php echo $row['judul'] ?></p>
+              </div>
+              <div class="card-footer">
+                Rp. <?php echo $row['harga'] ?>
+              </div>
             </div>
-            <div class="row text-truncate text-ellipsis--2">
-              <p class=""><?php echo $row['judul'] ?></p>
-            </div>
-            <div class="row border-top">
-              Rp. <?php echo $row['harga'] ?>
-            </div>
-
           </a>
       <?php
         }
