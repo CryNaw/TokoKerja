@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 <html>
-<?php
-#Connect Database    
-require 'Connectdatabase.php';
-
-session_start();
-$email = $_SESSION['email'];
-?>
-
 <!-- <style>
     *{
       font-family: Arial;
@@ -85,7 +77,10 @@ $email = $_SESSION['email'];
   <div class="bg-success bg-gradient py-1">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link active text-white" aria-current="page" href="index.php">Profil Kerja</a>
+        <a class="nav-link active text-white" aria-current="page" href="searchproduct.php">Profil Kerja</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active text-white" aria-current="page" href="">Profile</a>
       </li>
     </ul>
   </div>

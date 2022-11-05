@@ -1,7 +1,6 @@
 <?php
-require 'connectdatabase.php';
 
-session_start();
+require 'Header.php';
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -13,10 +12,13 @@ if ($result->num_rows > 0) {
   while ($row = $result->fetch_assoc()) {
     if ($password == $row["password"]) {
       if ($row["verified"] == 1) {
-        $_SESSION["email"] = $row["email"];
-        header('Location:home.php');
+
+        //Mengisi email di Session
+        $_SESSION['email'] = $row['email'];
+
+        header('Location:searchproduct.php');
       } else {
-        header('location:Login.php');
+        header('location:LoginCheckNotVerified.php');
       }
     } else {
       echo "Wrong Password";

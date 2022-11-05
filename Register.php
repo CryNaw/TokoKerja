@@ -5,7 +5,7 @@
   <title>Registration</title>
 
   <?php
-  require 'headersign.php'
+  require 'Header.php'
   ?>
 
 </head>

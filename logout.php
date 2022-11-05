@@ -1,5 +1,5 @@
 <?php
-unset($_SESSION['login']['email']);
-unset($_SESSION['login']['password']);
+Session_start();
+session_destroy();
 
 echo "<script>window.location='Login.php';</script>";

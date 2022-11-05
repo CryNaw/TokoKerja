@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 <html>
-<?php
-#Connect Database    
-require 'Connectdatabase.php';
-
-session_start();
-$email = $_SESSION['email'];
-?>
-
 <!-- <style>
     *{
       font-family: Arial;

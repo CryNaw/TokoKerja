@@ -3,7 +3,7 @@
 
 <head>
   <?php
-  require "Header-index.php";
+  require "Header.php";
 
   if (($_GET != null)) {
     $searchtext = $_GET['search'];

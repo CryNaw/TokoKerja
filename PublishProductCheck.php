@@ -1,7 +1,6 @@
 <?php
 
-require 'ConnectDatabase.php';
-session_start();
+require 'Header.php';
 $email = $_SESSION['email'];
 
 if(isset($_POST['submit'])){
