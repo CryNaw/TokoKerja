@@ -8,7 +8,7 @@ $sql = "SELECT email FROM user WHERE email='".$email."' ";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0){
-    echo "Your email is registered";
+    echo "Your email is already registered";
 }
 else{
     $sql = "INSERT INTO user(email,password) values('".$email."','".$password."')";

@@ -62,11 +62,24 @@
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
       ?>
-          <a class="col-4 col-md-4 col-lg-2" style="color:black; text-decoration:none" href="searchproduct.php?search=<?php echo $row['id'] ?>">
+          <a class="col-4 col-md-4 col-lg-2" style="color:black; text-decoration:none" href="detailproduct.php?id=<?php echo $row['id']?>">
             <div class="card h-100">
               <img class="card-img-top" src=<?php echo $row['sample1'] ?> alt="Sample1">
             
               <div class="card-body">
+                <p class="card-title text-truncate" style="font-weight:bold" >                  
+
+                  <?php 
+                    $sql2 = "select namatoko FROM user WHERE email='".$row['email']."'";
+                    $result2 = $conn->query($sql2);
+                    if ($result2->num_rows > 0) {
+                      while ($row2 = $result2->fetch_assoc()) {
+                        echo $row2['namatoko'];
+                      }
+                    }
+                  ?>
+
+                </p>
                 <p class="card-title text-truncate text-ellipsis--2"><?php echo $row['judul'] ?></p>
               </div>
               <div class="card-footer">
@@ -83,7 +96,7 @@
 
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+ 
 
 </body>
 

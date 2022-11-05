@@ -3,8 +3,29 @@
 
 <head>
   <?php
-  require "HeaderSeller.php"
+  require "Header.php";  
+
+  if(isset($_SESSION['email'])){
+    $sql = "select namatoko from user where email = '".$_SESSION['email']."'";
+    $result = $conn->query($sql);
+  
+    if($result->num_rows > 0 ){
+      while($row = $result->fetch_assoc()){
+        if($row['namatoko'] != null){
+          $namatoko = $row['namatoko'];
+        }
+        else{          
+          header('location:sellerprofile.php');
+        }
+      }        
+    }    
+  }
+  else{ 
+    header('location:login.php');
+  }
   ?>
+
+
 </head>
 
 <style>
@@ -23,8 +44,7 @@
 </style>
 
 <body>
-
-  <form id="publishproduct" action="publishproductcheck.php" method="post" enctype="multipart/form-data">
+  <form id="publishproduct" action="sellerpublishproductcheck.php" method="post" enctype="multipart/form-data">
     <div class="container">
 
       <div class="row justify-content-center">
@@ -109,11 +129,8 @@
           <input class="textbox bg-success bg-gradient text-white btn-sm" type="submit" name="submit" value="Publish">
         </div>
       </div>
-
-
     </div>
-  </form>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </form>  
 
 </body>
 

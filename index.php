@@ -38,6 +38,7 @@
         </nav>
         <br>
     </div>
+    
     <nav class="navbar navbar-expand-lg bg-light py-0">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,8 +85,9 @@
             </div>
         </div>
     </nav>
+
     <br><br>
-    </div>
+    
     <div class="container overflow-hidden text-center">
         <div class="row gy-5">
             <div class="col-6">

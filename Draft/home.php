@@ -19,7 +19,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="PublishProduct.php">Publish Product</a>
+                        <a class="nav-link text-white" href="SellerPublishProduct.php">Publish Product</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -29,7 +29,7 @@
                             <li>
                                 <p><b class="px-2"> Selamat Datang! </b></p>
                             </li>
-                            <li><a class="dropdown-item" href="biodata.php">Biodata</a></li>
+                            <li><a class="dropdown-item" href="SellerProfile.php">Profil</a></li>
                             <li><a class="dropdown-item" href="Login.php">Log Out</a></li>
                         </ul>
                     </li>
@@ -50,10 +50,10 @@
                     <button class="btn btn-light" type="submit">Search</button>
                 </form>
             </div>
-    </div>
-    </nav>
+    </div>    
+
     <br>
-    </div>
+    
     <nav class="navbar navbar-expand-lg bg-light py-0">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,8 +100,9 @@
             </div>
         </div>
     </nav>
+
     <br><br>
-    </div>
+    
     <div class="container overflow-hidden text-center">
         <div class="row gy-5">
             <div class="col-6">

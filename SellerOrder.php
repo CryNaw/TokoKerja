@@ -1,4 +1,4 @@
 <?php 
-require 'HeaderSeller.php';
+require 'Header.php';
 ?>
 

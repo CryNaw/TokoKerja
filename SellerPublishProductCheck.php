@@ -3,6 +3,18 @@
 require 'Header.php';
 $email = $_SESSION['email'];
 
+$sql = "select namatoko from user where email = '".$email."'";
+    $result = $conn->query($sql);
+  
+    if($result->num_rows > 0 ){
+      while($row = $result->fetch_assoc()){
+        $namatoko = $row['namatoko'];
+      }        
+    }
+    else{
+      header('location:sellerprofile.php');
+    }
+
 if(isset($_POST['submit'])){
 
   $judul  = $_POST['judul'];
@@ -34,6 +46,8 @@ if(isset($_POST['submit'])){
   $sql = "Insert into productlist (email, judul, kategori, deskripsi, harga, sample1, sample2, sample3) values ('".$email."','".$judul."','".$kategori."','".$deskripsi."','".$harga."','".$newfilename1."','".$newfilename2."','".$newfilename3."')";
   $result = $conn-> query($sql);
   echo"Successfully Added";
+
+  header('location:SellerProductList.php');
 }
 
 ?>
