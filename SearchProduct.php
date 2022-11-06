@@ -12,24 +12,14 @@
   ?>
 </head>
 
-<style>
-  .textbox {
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-
-    border-width: thin;
-    border-color: round;
-  }
-
-  .marginbot-10 {
-    margin-bottom: 10px;
-  }
-
-  .margin-10 {
-    margin: 10px;
-  }
-
+<style>  
+  .resize-image{
+  height:150px;  
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+  }  
+ 
   .text-ellipsis--2 {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -39,8 +29,8 @@
     white-space: normal;
   }
 
-  p:hover {
-    color: green;
+  a:hover .child{
+      color:green;    
   }
 </style>
 
@@ -62,12 +52,12 @@
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
       ?>
-          <a class="col-4 col-md-4 col-lg-2" style="color:black; text-decoration:none" href="detailproduct.php?id=<?php echo $row['id']?>">
-            <div class="card h-100">
-              <img class="card-img-top" src=<?php echo $row['sample1'] ?> alt="Sample1">
+          <a class="col-4 col-md-4 col-lg-2" style="color:black; text-decoration:none; margin-bottom:10px" href="detailproduct.php?id=<?php echo $row['id']?>">
+            <div class="card h-70">
+              <img class="card-img-top resize-image" src=<?php echo $row['sample1'] ?> alt="Sample1">
             
               <div class="card-body">
-                <p class="card-title text-truncate" style="font-weight:bold" >                  
+                <p class="child card-title text-truncate" style="font-weight:bold" >                  
 
                   <?php 
                     $sql2 = "select namatoko FROM user WHERE email='".$row['email']."'";
@@ -80,10 +70,10 @@
                   ?>
 
                 </p>
-                <p class="card-title text-truncate text-ellipsis--2"><?php echo $row['judul'] ?></p>
+                <p class="child card-title text-truncate text-ellipsis--2"><?php echo $row['judul'] ?></p>
               </div>
               <div class="card-footer">
-                Rp. <?php echo $row['harga'] ?>
+                <p class="child">Rp. <?php echo $row['harga'] ?></p>
               </div>
             </div>
           </a>

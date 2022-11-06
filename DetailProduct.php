@@ -12,18 +12,35 @@ if($result->num_rows > 0){
     $kategori = $row['kategori'];
     $deskripsi = $row['deskripsi'];
     $harga = $row['harga'];
-    $sample1 =$row['sample1'];
-    $sample2 =$row['sample2'];
-    $sample3 =$row['sample3'];
+    $sample = array($row['sample1'],$row['sample2'],$row['sample3']);        
   }
  
 }
 ?>
 
-<style>
-.carousel-img {    
-    height: 450px;
-    object-fit: fill;
+<style>  
+.dot {
+  cursor: pointer;
+  height: 80px;
+  width: 15%;
+  margin: 0 2px;
+  border: 5px;
+  object-fit: cover;
+  transition: border-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.resize-image{
+  height:380px;  
+  width: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+.mySlides{
+  display:none;
 }
 </style>
 
@@ -37,39 +54,31 @@ if($result->num_rows > 0){
 
   <div class="row">
 
-    <div class="col-6">
+    <div class="col-6" >              
+    <?php    
+      foreach($sample as $value){
+      if($value != "ImagesSamples/"){              
+    ?>              
+        <img src="<?php echo $value ?>" class="mySlides resize-image" style="background-color:gray;">                     
+    <?php
+      }      
+    }
+    ?>    
 
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100 carousel-img" src="<?php echo $sample1 ?>" alt="First slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100 carousel-img" src="<?php echo $sample2 ?>" alt="Second slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100 carousel-img" src="<?php echo $sample3 ?>" alt="Third slide">
-          </div>
-        </div>
-
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-
-      </div>
+    <div style="text-align:center;">
+    <br>             
+    <?php    
+      for($i = 0; $i < count($sample);$i++){
+        if($sample[$i] != ""){     
+    ?>
+        <img class="dot" onclick="currentSlide($i)" src="<?php echo $sample[$i] ?>">
+    <?php
+        }                  
+      }
+    ?>  
     </div>
+    
+    </div>    
 
     <div class="col-6">
       ads,jfjalsdjfldkajflakdsj
@@ -78,6 +87,32 @@ if($result->num_rows > 0){
   </div>
   
 </div>  
+
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
 
 
 </body>

@@ -110,15 +110,18 @@
         <div class="col-md-6">
           <div class="row">
             <div class="col">
-              <input class="textbox" type="file" accept="image/*" name="sample1">
+              <label for="sampleimage">Cover</label>
+              <input id="sampleimage" class="textbox" type="file" accept="image/*" name="sample1">
             </div>
 
             <div class="col">
-              <input class="textbox" type="file" accept="image/*" name="sample2">
+              <label for="sampleimage2">Sample 2</label>
+              <input id="sampleimage2" class="textbox" type="file" accept="image/*" name="sample2">
             </div>
 
             <div class="col">
-              <input class="textbox" type="file" accept="image/*" name="sample3">
+              <label for="sampleimage3">Sample 3</label>
+              <input id="sampleimage3" class="textbox" type="file" accept="image/*" name="sample3">
             </div>
           </div>
         </div>

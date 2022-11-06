@@ -1,35 +1,25 @@
 <?php
+for($i = 1; $i <= 10; $i++) {
+  $sample = "$"."sample";
+  $sample .= $i;
+  echo $sample;
+}
+?>
 
-/**
- * InvoiceExample.php
- * php version 7.2.0
- *
- * @category Example
- * @package  Xendit/Examples
- * @author   Hendry <hendry@xendit.co>
- * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://api.xendit.co
- */
+$file2 = $_FILES['sample2'];
+  print_r($file2);
+  $id2 = uniqid();  
+  $filename2 = $_FILES['sample2']['name'];
+  $extension2 = pathinfo ( $filename2 , PATHINFO_EXTENSION);
+  $fileTMPName2 = $_FILES['sample2']['tmp_name'];
+  $newfilename2 = 'ImagesSamples/' . $id2 . $extension2;
+  move_uploaded_file($fileTMPName2, $newfilename2);
 
-use Xendit\Xendit;
-
-require "vendor/autoload.php";
-
-Xendit::setApiKey("xnd_development_eZiafA6RVUlBMyDvy0drLLxnQAsYI9ykF7Y91BgxEr55At38KAIdHzWkQpg6BsqW");
-
-$Parameter = [
-  'external_id' => 'test-reference-id',
-  'payer_email' => 'seseorang@gmail.com',
-  'description' => 'Pembayaran tes tes',
-  'amount' => 50000,     
-];
-
-$CreateInvoice = \Xendit\Invoice::create($Parameter);
-print_r($CreateInvoice);
-
-$_id = $CreateInvoice['id'];
-echo $_id;
-
-
-
-
+  $file3 = $_FILES['sample3'];
+  print_r($file3);
+  $id3 = uniqid();
+  $filename3 = $_FILES['sample3']['name'];
+  $extension3 = pathinfo ( $filename3 , PATHINFO_EXTENSION);
+  $fileTMPName3 = $_FILES['sample3']['tmp_name'];
+  $newfilename3 = 'ImagesSamples/' . $id3 . $extension3;
+  move_uploaded_file($fileTMPName3, $newfilename3);
