@@ -59,7 +59,7 @@ if($result->num_rows > 0){
       foreach($sample as $value){
       if($value != "ImagesSamples/"){              
     ?>              
-        <img src="<?php echo $value ?>" class="mySlides resize-image" style="background-color:gray;">                     
+        <img src="<?php echo $value ?>" class="mySlides resize-image" style="background-color:gray;">                      
     <?php
       }      
     }
@@ -67,21 +67,37 @@ if($result->num_rows > 0){
 
     <div style="text-align:center;">
     <br>             
-    <?php    
-      for($i = 0; $i < count($sample);$i++){
-        if($sample[$i] != ""){     
+    <?php         
+        if($sample[0] != ""){     
     ?>
-        <img class="dot" onclick="currentSlide($i)" src="<?php echo $sample[$i] ?>">
+        <img class="dot" onclick="currentSlide(1)" src="<?php echo $sample[0] ?>">
     <?php
-        }                  
-      }
+        }                        
+    ?>  
+
+    <?php         
+        if($sample[1] != ""){     
+    ?>
+        <img class="dot" onclick="currentSlide(2)" src="<?php echo $sample[1] ?>">
+    <?php
+        }                        
+    ?>  
+
+    <?php         
+        if($sample[2] != ""){
+    ?>
+        <img class="dot" onclick="currentSlide(3)" src="<?php echo $sample[2] ?>">
+    <?php
+        }                        
     ?>  
     </div>
     
     </div>    
 
     <div class="col-6">
-      ads,jfjalsdjfldkajflakdsj
+      <div class="row">
+        <h1 class="text-truncate text-ellipsis--2"></h1>
+      </div>
     </div>
 
   </div>
