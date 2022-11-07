@@ -44,7 +44,7 @@
 </style>
 
 <body>
-  <form id="publishproduct" name="publishproduct" action="sellerpublishproductcheck.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+  <form id="publishproduct" action="sellerpublishproductcheck.php" method="post" enctype="multipart/form-data">
     <div class="container">
 
       <div class="row justify-content-center">
@@ -87,7 +87,7 @@
           Deskripsi
         </div>
         <div class="col-md-6">
-          <textarea class="textbox" rows="12" form="publishproduct" name="deskripsi" style="white-space: pre;"></textarea>
+          <textarea class="textbox" rows="12" form="publishproduct" name="deskripsi"></textarea>
         </div>
       </div>
 
@@ -100,15 +100,6 @@
         </div>
         <div class="col-md-6">
           <input class="textbox" type="number" min="25000" name="harga">
-        </div>
-      </div>
-
-      <div class="row justify-content-center marginbot-10">
-        <div class="col-md-2">
-          Waktu Pengerjaan
-        </div>
-        <div class="col-md-6">
-          <input class="textbox" type="number" max="99" min="1" maxlength="2" name="waktu"></textarea>
         </div>
       </div>
 
@@ -144,22 +135,6 @@
     </div>
   </form>  
 
-<script>
-  function validateForm() {
-    const arr = ['judul', 'kategori', 'deskripsi', 'harga', 'waktu', 'sample1'];
-    let valid = 1;  
-    for (i  = 0; i < arr.length; i++){
-      var x = document.forms["publishproduct"][arr[i]].value;
-      if (x == "") {      
-        valid = 0;
-      }
-    }
-    if(valid == 0){
-      alert("judul, kategori, deskripsi, harga, waktu, cover wajib diisi");
-      return false;
-  }
-}
-</script>
 </body>
 
 </html>
