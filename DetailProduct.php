@@ -12,13 +12,27 @@ if($result->num_rows > 0){
     $kategori = $row['kategori'];
     $deskripsi = $row['deskripsi'];
     $harga = $row['harga'];
+    $waktu = $row ['waktu'];
     $sample = array($row['sample1'],$row['sample2'],$row['sample3']);        
   }
- 
 }
 ?>
 
 <style>  
+.continue-button{
+  border-radius: 5px;
+  background-color: green;
+  border-width: thin;
+  border:none;
+
+}
+
+.contact-button{
+  border-radius: 5px;
+
+  border-width: thin;
+  border: none;
+}
 .dot {
   cursor: pointer;
   height: 80px;
@@ -42,22 +56,37 @@ if($result->num_rows > 0){
 .mySlides{
   display:none;
 }
+
+.text-ellipsis--2 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+  }
+
+  .text-ellipsis--6 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+  }
 </style>
 
 
 <body>
 <div class="container">
-
   <div class="row">
-    <h1><?php echo $judul ?></h1>
-  </div>
+  
+    <h1 class="text-truncate text-ellipsis--2"><?php echo $judul;?></h1>
 
-  <div class="row">
-
-    <div class="col-6" >              
+    <div class="col-12 col-md-8" >              
     <?php    
       foreach($sample as $value){
-      if($value != "ImagesSamples/"){              
+      if($value != ""){              
     ?>              
         <img src="<?php echo $value ?>" class="mySlides resize-image" style="background-color:gray;">                      
     <?php
@@ -94,16 +123,29 @@ if($result->num_rows > 0){
     
     </div>    
 
-    <div class="col-6">
-      <div class="row">
-        <h1 class="text-truncate text-ellipsis--2"></h1>
+    <div class="col-12 col-md-4">
+      <div class="row border">
+      <h1 class="text-truncate text-ellipsis--2"><?php echo $judul;?></h1>
+        <p class="text-truncate text-ellipsis--4"><?php echo  $deskripsi; ?></p>
+        <p>Rp. <?php echo $harga; ?></p>
+        <p>Waktu Pengerjaan : <?php echo $waktu?> hari</p>    
+        
+        <div class="col-12 text-center">
+          <button class="continue-button" style="width:80%; margin:10px;" >Continue</button>                            
+        </div>
       </div>
+      
+      <div class="row" style="margin-top:10px">
+        <div class="col-12 text-center">
+          <button class="contant-button" style="width:80%; margin:10px;">Contant Seller  </button>
+        </div>
+      </div>
+
     </div>
 
   </div>
   
 </div>  
-
 
 <script>
 let slideIndex = 1;

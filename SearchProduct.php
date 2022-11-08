@@ -73,7 +73,7 @@
                 <p class="child card-title text-truncate text-ellipsis--2"><?php echo $row['judul'] ?></p>
               </div>
               <div class="card-footer">
-                <p class="child">Rp. <?php echo $row['harga'] ?></p>
+                <p class="child">Rp. <?php echo $row['harga']?></p>
               </div>
             </div>
           </a>
@@ -86,8 +86,6 @@
 
     </div>
   </div>
- 
-
 </body>
 
 </html>
