@@ -86,6 +86,23 @@ if($result->num_rows > 0){
 
   </div>
   
+  <div class="row">        
+    <div class="col-12 col-md-8">      
+      <h2>Deskripsi Produk</h2>
+      <p><?php echo nl2br($deskripsi)?></p>     
+      <hr>
+      <h2>Seller</h2>
+      <p><?php echo $namatoko?></p>      
+      <br>
+      <h2>Reviews</h2>
+      <div class="row border">
+        <h4>namaorang</h4>
+        <p>wah sellernya bagus sekali</p>
+      </div>
+      
+    </div>
+  </div>
+
 </div>  
 
 

@@ -1,5 +1,6 @@
 <?php
 require "Header.php";
+require "UserLoginCheck.php";
 
 //$id_product = $_POST['id_pembelian'];
 $namatoko = $_POST['namatoko']; 
