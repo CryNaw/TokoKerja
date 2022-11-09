@@ -16,7 +16,7 @@ $xIncomingCallbackTokenHeader = isset($reqHeaders['x-callback-token']) ? $reqHea
 // Untuk memastikan permintaan datang dari Xendit
 // Anda harus membandingkan token yang masuk sama dengan token verifikasi callback Anda
 // Ini untuk memastikan permintaan datang dari Xendit dan bukan dari pihak ketiga lainnya.
-// if($xIncomingCallbackTokenHeader === $xenditXCallbackToken){
+if($xIncomingCallbackTokenHeader === $xenditXCallbackToken){
 // Permintaan masuk diverifikasi berasal dari Xendit
 
 // Baris ini untuk mendapatkan semua input pesan dalam format JSON teks mentah
@@ -42,7 +42,7 @@ $conn->query($sql);
 
   // Kamu bisa menggunakan array objek diatas sebagai informasi callback yang dapat digunaka untuk melakukan pengecekan atau aktivas tertentu di aplikasi atau sistem kamu.
 
-// }else{
-//   // Permintaan bukan dari Xendit, tolak dan buang pesan dengan HTTP status 403
-//   http_response_code(403);
-// }
+}else{
+  // Permintaan bukan dari Xendit, tolak dan buang pesan dengan HTTP status 403
+  http_response_code(403);
+}

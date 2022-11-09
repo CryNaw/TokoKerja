@@ -87,7 +87,7 @@
           Deskripsi
         </div>
         <div class="col-md-6">
-          <textarea class="textbox" rows="12" form="publishproduct" name="deskripsi"></textarea>
+          <textarea class="textbox" rows="12" form="publishproduct" name="deskripsi" style="white-space: pre;"></textarea>
         </div>
       </div>
 
