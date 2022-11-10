@@ -33,16 +33,16 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="SellerPublishProduct.php">Tambahkan Produk</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Akun
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-end">
                             <li>
                                 <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 200px;"><b class="px-2"><?php echo $_SESSION['email'] ?></b></p>
                             </li>
                             <li><a class="dropdown-item" href="sellerprofile.php">Profil</a></li>
-                            <li><a class="dropdown-item" href="Login.php">Keluar</a></li>
+                            <li><a class="dropdown-item" href="logout.php">Keluar</a></li>
                         </ul>
                     </li>
                 </ul>
