@@ -4,6 +4,14 @@ require 'Header.php';
 $sql = "Select * from productlist where id='" .$_GET['id']. "'";
 $result = $conn->query($sql);
 
+if(isset($_SESSION['email'])){
+  $current_email = $_SESSION['email'];
+}else{
+  $current_email = "";
+}
+
+
+
 if($result->num_rows > 0){
   while($row = $result->fetch_assoc()){
     $id = $row['id'];
@@ -99,9 +107,8 @@ if($result->num_rows > 0){
 
 
 <body>
-<div class="container">
-  <div class="row">
-  
+<div class="container">  
+  <div class="row">  
     <h1 class="text-truncate text-ellipsis--2"><?php echo $judul;?></h1>
 
     <div class="col-12 col-md-8" >              
@@ -153,22 +160,21 @@ if($result->num_rows > 0){
         
         
         <div class="text-center">
-          <form action="checkout.php" method="post">
+          <?php if($current_email != $email){ ?>
+            <form action="checkout.php" method="post">
+            <input type="hidden" name="email_buyer" value="<?php echo $current_email?>"></input>
+            <input type="hidden" name="email_seller" value="<?php echo $email?>"></input>
             <input type="hidden" name="judul" value="<?php echo $judul?>"></input>
             <input type="hidden" name="namatoko" value ="<?php echo $namatoko?>"></input>
             <input type="hidden" name="deskripsi" value="<?php echo $deskripsi?>"></input>
-            <input type="hidden" name="harga" value="<?php echo $harga?>"></input>
-            <input type="submit" class="continue-button" style="width:80%; margin:10px;" value="Continue"></input>
-          </form>          
+            <input type="hidden" name="harga" value="<?php echo $harga?>"></input>            
+            <input type="submit" class="continue-button" style="width:80%; margin:10px;" value="Continue"></input>       
+            </form>        
+          <?php } else{ ?>
+            <a href="editproduct.php?id=<?php echo $id?>"><button class="continue-button" style="width:80%; margin:10px;">Edit</button></a>
+          <?php } ?>                 
         </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-12 text-center">
-          <button class="contact-button" style="width:80%; margin:10px;">Contant Seller</button>
-        </div>
-      </div>
-
+      </div>          
     </div>
 
   </div>

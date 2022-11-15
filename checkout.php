@@ -2,9 +2,10 @@
 require "Header.php";
 require "UserLoginCheck.php";
 
-//$id_product = $_POST['id_pembelian'];
-$namatoko = $_POST['namatoko']; 
+$email_buyer = $_POST['email_buyer'];
+$email_seller = $_POST['email_seller'];
 $judul = $_POST['judul'];
+$namatoko = $_POST['namatoko']; 
 $deskripsi = $_POST['deskripsi']; 
 $harga = $_POST['harga'];
 ?>
@@ -25,6 +26,7 @@ $harga = $_POST['harga'];
   border-width: thin;
   border:none;
 }
+
 .catatan-text{
   height:100%;
   width:100%;
@@ -38,7 +40,7 @@ $harga = $_POST['harga'];
 
 </style>
 
-<form id="pembayaran" action="" method="POST"></form>
+<form id="pembayaran" action="CheckoutCheck.php" method="POST"></form>
 
 <div class="container">
   <div class="row">
@@ -60,10 +62,13 @@ $harga = $_POST['harga'];
         <h1>Rp. <?php echo $harga?></h1>
 
         <div class="text-center">        
-            <input form="" type="hidden" name="" value=""></input>
-            <input form="" type="hidden" name="" value=""></input>
-            <input form="" type="hidden" name="" value=""></input>
-            <input form="pembayaran" class="pay-button" style="width: 80%; margin:10px;" type="submit" name="Bayar" value="Bayar"></input>        
+          <input type="hidden" name="email_buyer" value="<?php echo $current_email?>"></input>
+          <input form="pembayaran" type="hidden" name="email_seller" value="<?php echo $email?>"></input>
+          <input form="pembayaran" type="hidden" name="judul" value="<?php echo $judul?>"></input>
+          <input form="pembayaran" type="hidden" name="namatoko" value ="<?php echo $namatoko?>"></input>
+          <input form="pembayaran" type="hidden" name="deskripsi" value="<?php echo $deskripsi?>"></input>
+          <input form="pembayaran" type="hidden" name="harga" value="<?php echo $harga?>"></input>            
+          <input form="pembayaran" class="pay-button" style="width: 80%; margin:10px;" type="submit" name="Bayar" value="Bayar"></input>        
         </div>
       </div>
 

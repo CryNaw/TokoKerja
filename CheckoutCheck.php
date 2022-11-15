@@ -17,11 +17,18 @@ require "vendor/autoload.php";
 
 Xendit::setApiKey("xnd_development_eZiafA6RVUlBMyDvy0drLLxnQAsYI9ykF7Y91BgxEr55At38KAIdHzWkQpg6BsqW");
 
+$email_buyer = $_POST['email_buyer'];
+$email_seller = $_POST['email_seller'];
+$judul = $_POST['judul'];
+$namatoko = $_POST['namatoko']; 
+$deskripsi = $_POST['deskripsi']; 
+$harga = $_POST['harga'];
+
 $Parameter = [
   'external_id' => 'test-reference-id',
   'payer_email' => 'seseorang@gmail.com',
   'description' => 'Pembayaran tes tes',
-  'amount' => 50000,     
+  'amount' => $harga,     
 ];
 
 $CreateInvoice = \Xendit\Invoice::create($Parameter);
