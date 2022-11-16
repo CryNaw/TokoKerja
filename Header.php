@@ -1,7 +1,7 @@
 <?php
 ob_start();
 #Connect Database    
-require 'Connectdatabase.php';
+require 'ConnectDatabase.php';
 session_start();
 
 if(isset($_SESSION['email'])){

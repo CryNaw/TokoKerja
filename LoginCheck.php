@@ -16,7 +16,7 @@ if ($result->num_rows > 0) {
         //Mengisi email di Session
         $_SESSION['email'] = $row['email'];
 
-        header('Location:searchproduct.php');
+        header('Location:SearchProduct.php');
       } else {
         header('location:LoginCheckNotVerified.php');
       }
