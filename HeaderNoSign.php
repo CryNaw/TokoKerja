@@ -17,7 +17,7 @@
       <nav class="navbar navbar-expand-lg bg-success bg-gradient py-1">     
       <div class="container-fluid">
         
-          <a class="navbar-brand text-white" href="searchproduct.php">TokoKerja</a> 
+          <a class="navbar-brand text-white" href="SearchProduct.php">TokoKerja</a> 
           <div class="position-absolute start-50 translate-middle-x">
           <form class="d-flex" role="search" action="SearchProduct.php" method="GET">
           <input class="form-control me-2" type="search" placeholder="Pencarian" aria-label="search" name="search">
