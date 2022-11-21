@@ -52,7 +52,7 @@
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
       ?>
-          <a class="col-4 col-md-4 col-lg-2" style="color:black; text-decoration:none; margin-bottom:10px" href="detailproduct.php?id=<?php echo $row['id']?>">
+          <a class="col-4 col-md-4 col-lg-2" style="color:black; text-decoration:none; margin-bottom:10px" href="DetailProduct.php?id=<?php echo $row['id']?>">
             <div class="card h-70">
               <img class="card-img-top resize-image" src=<?php echo $row['sample1'] ?> alt="Sample1">
             

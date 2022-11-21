@@ -13,7 +13,7 @@ if ($result->num_rows > 0){
 else{
     $sql = "INSERT INTO user(email,password) values('".$email."','".$password."')";
     $conn->query($sql);
-    header('Location:login.php');
+    header('Location:Login.php');
 }
 
 ?>

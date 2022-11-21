@@ -17,7 +17,7 @@
     <nav class="navbar navbar-expand-lg bg-success bg-gradient py-1">     
       <div class="container-fluid">
         
-          <a class="navbar-brand text-white" href="searchproduct.php">TokoKerja</a>   
+          <a class="navbar-brand text-white" href="SearchProduct.php">TokoKerja</a>   
           
           <div class="position-absolute start-50 translate-middle-x">
           <form class="d-flex" role="search" action="SearchProduct.php" method="GET">
@@ -41,8 +41,8 @@
                             <li>
                                 <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 200px;"><b class="px-2"><?php echo $_SESSION['email'] ?></b></p>
                             </li>
-                            <li><a class="dropdown-item" href="sellerprofile.php">Profil</a></li>
-                            <li><a class="dropdown-item" href="logout.php">Keluar</a></li>
+                            <li><a class="dropdown-item" href="SellerProfile.php">Profil</a></li>
+                            <li><a class="dropdown-item" href="Logout.php">Keluar</a></li>
                         </ul>
                     </li>
                 </ul>

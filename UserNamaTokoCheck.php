@@ -9,7 +9,7 @@ if(isset($_SESSION['email'])){
         $namatoko = $row['namatoko'];
       }
       else{          
-        header('location:sellerprofile.php');
+        header('location:SellerProfile.php');
       }
     }        
   }    

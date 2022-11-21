@@ -7,7 +7,7 @@
 use Psr\Http\Message\RequestInterface;
 
   require "Header.php";  
-  require "UserLoginCheck.php";
+  require "UserNamaTokoCheck.php";
   ?>
 
 
@@ -29,7 +29,7 @@ use Psr\Http\Message\RequestInterface;
 </style>
 
 <body>
-  <form id="publishproduct" action="sellerpublishproductcheck.php" method="post" enctype="multipart/form-data">
+  <form id="publishproduct" action="SellerPublishProductCheck.php" method="post" enctype="multipart/form-data">
     <div class="container">
 
       <div class="row justify-content-center">
