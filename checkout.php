@@ -4,10 +4,12 @@ require "UserLoginCheck.php";
 
 $email_buyer = $_POST['email_buyer'];
 $email_seller = $_POST['email_seller'];
+$id = $_POST['id'];
 $judul = $_POST['judul'];
 $namatoko = $_POST['namatoko']; 
 $deskripsi = $_POST['deskripsi']; 
 $harga = $_POST['harga'];
+$waktu_pengiriman = $_POST['waktu_pengiriman']
 ?>
 
 <style>
@@ -48,6 +50,8 @@ $harga = $_POST['harga'];
       <h1><img style="width:50px; height:50px; border-radius:50%;" src="img/brainstorming.png"><?php echo $namatoko ?></h1>
       <h3><?php echo $judul ?></h3>
       <h5><?php echo nl2br($deskripsi)?></h5>
+      <br>
+      <h5>Waktu Pengerjaan : <?php echo $waktu_pengiriman ?> Hari</h5>
       <hr>
       <h3>Catatan</h3>
       <div>        
@@ -62,12 +66,14 @@ $harga = $_POST['harga'];
         <h1>Rp. <?php echo $harga?></h1>
 
         <div class="text-center">        
-          <input type="hidden" name="email_buyer" value="<?php echo $current_email?>"></input>
-          <input form="pembayaran" type="hidden" name="email_seller" value="<?php echo $email?>"></input>
+          <input form="pembayaran" type="hidden" name="email_buyer" value="<?php echo $email_buyer?>"></input>
+          <input form="pembayaran" type="hidden" name="email_seller" value="<?php echo $email_seller?>"></input>
+          <input form="pembayaran" type="hidden" name="id" value="<?php echo $id?>"></input>
           <input form="pembayaran" type="hidden" name="judul" value="<?php echo $judul?>"></input>
           <input form="pembayaran" type="hidden" name="namatoko" value ="<?php echo $namatoko?>"></input>
           <input form="pembayaran" type="hidden" name="deskripsi" value="<?php echo $deskripsi?>"></input>
           <input form="pembayaran" type="hidden" name="harga" value="<?php echo $harga?>"></input>            
+          <input form="pembayaran" type="hidden" name="waktu_pengiriman" value="<?php echo $waktu_pengiriman?>"></input>        
           <input form="pembayaran" class="pay-button" style="width: 80%; margin:10px;" type="submit" name="Bayar" value="Bayar"></input>        
         </div>
       </div>

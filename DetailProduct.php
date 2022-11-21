@@ -21,7 +21,7 @@ if($result->num_rows > 0){
     $deskripsi = $row['deskripsi'];
     $deskripsi_pendek = $row['deskripsi_pendek'];
     $harga = $row['harga'];
-    $waktu = $row['waktu_pengiriman'];
+    $waktu_pengiriman = $row['waktu_pengiriman'];
     $sample = array($row['sample1'],$row['sample2'],$row['sample3']);        
   }
 }
@@ -154,7 +154,7 @@ if($result->num_rows > 0){
       <div class="row border">
         <h1 class="text-truncate text-ellipsis--2"><?php echo $judul?></h1>
         <p class="text-truncate text-ellipsis--6"><?php echo  $deskripsi_pendek; ?></p>
-        <p>Waktu Pengerjaan : <?php echo $waktu?> hari</p>
+        <p>Waktu Pengerjaan : <?php echo $waktu_pengiriman?> hari</p>
         <br>
         <p style="font-weight:bold; font-size:30px; color:green;">Rp. <?php echo $harga; ?></p>
         
@@ -164,10 +164,12 @@ if($result->num_rows > 0){
             <form action="checkout.php" method="post">
             <input type="hidden" name="email_buyer" value="<?php echo $current_email?>"></input>
             <input type="hidden" name="email_seller" value="<?php echo $email?>"></input>
+            <input type="hidden" name="id" value="<?php echo $id?>"></input>
             <input type="hidden" name="judul" value="<?php echo $judul?>"></input>
             <input type="hidden" name="namatoko" value ="<?php echo $namatoko?>"></input>
             <input type="hidden" name="deskripsi" value="<?php echo $deskripsi?>"></input>
             <input type="hidden" name="harga" value="<?php echo $harga?>"></input>            
+            <input type="hidden" name="waktu_pengiriman" value="<?php echo $waktu_pengiriman?>"></input>       
             <input type="submit" class="continue-button" style="width:80%; margin:10px;" value="Continue"></input>       
             </form>        
           <?php } else{ ?>

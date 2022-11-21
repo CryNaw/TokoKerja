@@ -21,7 +21,7 @@
         </ul>
 
 
-        <a href="index.php" style="text-decoration:none;">
+        <a href="SearchProduct.php" style="text-decoration:none;">
             <h1 class="text-center text-white py-3">Profil Kerja</h1>
         </a>
 
@@ -30,8 +30,8 @@
         <nav class="navbar">
             <div class="container-fluid  justify-content-center">
                 <a class="navbar-brand"></a>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex" role="search" method="GET" action="SearchProduct.php">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
                     <button class="btn btn-light" type="submit">Search</button>
                 </form>
             </div>
