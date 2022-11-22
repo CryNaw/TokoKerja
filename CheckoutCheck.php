@@ -57,7 +57,7 @@ $description = $CreateInvoice['description'];
 $invoice_url = $CreateInvoice['invoice_url'];
 
 //Insert To Database
-$sql = "INSERT INTO orderlist(xendit_id,external_id,user_id,status,amount,payer_email,description,invoice_url ) values('".$email."','".$password."')"; ;
+$sql = "INSERT INTO orderlist(xendit_id,external_id,user_id,status,amount,payer_email,description,invoice_url, ) values('".$email."','".$password."')"; ;
 $result = $conn->query($sql);
 
 

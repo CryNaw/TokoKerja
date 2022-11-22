@@ -3,18 +3,7 @@
 
 <?php
 require 'Header.php';
-
-$email = $_SESSION['email'];
-
-$sql = "SELECT namatoko FROM user WHERE email='".$email."' ";
-$result = $conn->query($sql);
-
-if(isset($_SESSION['email'])){
-
-}
-else{
-  header('location:login.php');  
-}
+require 'UserLoginCheck.php'
 ?>
 
 <head>
