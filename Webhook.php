@@ -26,19 +26,21 @@ $arrRequestInput = json_decode($rawRequestInput, true);
 echo 'iya sudah ada bang';
 print_r($arrRequestInput);
 
-$_id = $arrRequestInput['id'];
-$_externalId = $arrRequestInput['external_id'];
-$_userId = $arrRequestInput['user_id'];
-$_status = $arrRequestInput['status'];
-$_paidAmount = $arrRequestInput['paid_amount'];
-$_paidAt = $arrRequestInput['paid_at'];
-$_paymentChannel = $arrRequestInput['payment_channel'];
-$_paymentDestination = $arrRequestInput['payment_destination'];
+$xendit_id = $arrRequestInput['id'];
+$external_id = $arrRequestInput['external_id'];
+$userId = $arrRequestInput['user_id'];
+$status = $arrRequestInput['status'];
+$paidAmount = $arrRequestInput['paid_amount'];
+$paidAt = $arrRequestInput['paid_at'];
+$paymentChannel = $arrRequestInput['payment_channel'];
+$paymentDestination = $arrRequestInput['payment_destination'];
 
 require 'ConnectDatabase.php';
-$sql = "insert into xendit_log (ID) values ('" . $_id . "')";
+$sql = "update orderlist set status = ".$status." where xendit_id = ".$xendit_id."";
 $conn->query($sql);
 
+$sql = "insert into xendit_log (id, product_id, ) values ()";
+$conn->query($sql);
 
   // Kamu bisa menggunakan array objek diatas sebagai informasi callback yang dapat digunaka untuk melakukan pengecekan atau aktivas tertentu di aplikasi atau sistem kamu.
 
