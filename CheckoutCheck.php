@@ -13,6 +13,7 @@
 
 use Xendit\Xendit;
 
+require "ConnectDatabase.php";
 require "vendor/autoload.php";
 
 Xendit::setApiKey("xnd_development_eZiafA6RVUlBMyDvy0drLLxnQAsYI9ykF7Y91BgxEr55At38KAIdHzWkQpg6BsqW");
@@ -25,6 +26,8 @@ $namatoko = $_POST['namatoko'];
 $deskripsi = $_POST['deskripsi']; 
 $harga = $_POST['harga'];
 $waktu_pengiriman = $_POST['waktu_pengiriman'];
+
+$catatan = $_POST['catatan'];
 
 $Parameter = [
   'external_id' => $id,
@@ -51,10 +54,11 @@ $status = $CreateInvoice['status'];
 $amount = $CreateInvoice['amount'];
 $description = $CreateInvoice['description'];
 $invoice_url = $CreateInvoice['invoice_url'];
+$created = $CreateInvoice['created'];
 
 //Insert To Database
-$sql = "INSERT INTO orderlist(xendit_id, product_id, description, amount, email_buyer, email_seller,status) 
-values('".$xendit_id."','".$product_id. "','".$description."','".$amount."','".$email_buyer."','".$email_seller."','".$status."')";
+$sql = "INSERT INTO orderlist(xendit_id, product_id, description, amount, email_buyer, email_seller, catatan, status, created)
+values('".$xendit_id."','".$product_id. "','".$description."','".$amount."','".$email_buyer."','".$email_seller."','".$catatan."','".$created."','".$status."')";
 $result = $conn->query($sql);
 
 header('location:'.$invoice_url);

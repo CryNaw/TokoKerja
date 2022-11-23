@@ -55,7 +55,7 @@ $waktu_pengiriman = $_POST['waktu_pengiriman']
       <hr>
       <h3>Catatan</h3>
       <div>        
-          <textarea class="catatan-text" rows="12" form="pembayaran" name="deskripsi"></textarea>
+          <textarea class="catatan-text" rows="12" form="pembayaran" name="catatan"></textarea>
       </div>
 
 

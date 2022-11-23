@@ -22,7 +22,7 @@
 
 
         <a href="SearchProduct.php" style="text-decoration:none;">
-            <h1 class="text-center text-white py-3">Profil Kerja</h1>
+            <h1 class="text-center text-white py-3">Toko Kerja</h1>
         </a>
 
         <h2 class="text-center text-white py-3">Temukan freelancer yang sempurna untuk anda</h2>
