@@ -25,17 +25,18 @@ $judul = $_POST['judul'];
 $namatoko = $_POST['namatoko']; 
 $deskripsi = $_POST['deskripsi']; 
 $harga = $_POST['harga'];
+$sample1 = $_POST['sample1'];
 $waktu_pengiriman = $_POST['waktu_pengiriman'];
 
 $catatan = $_POST['catatan'];
 
-$Parameter = [
+$Parameter = [    
   'external_id' => $id,
   'amount' => $harga+$harga*3/100,     
-  'description' => $judul.', '.$deskripsi,
+  'description' => $judul,
   'payer_email' => $email_buyer,
-  'success_redirect_url' => 'https=>//www.tokokerja.com/CheckoutSuccess.php',
-  'failure_redirect_url' => 'https=>//www.tokokerja.com/CheckoutFailed.php',
+  'success_redirect_url' => 'https=>//www.tokokerja.com/CheckoutCheckSuccess.php',
+  'failure_redirect_url' => 'https=>//www.tokokerja.com/CheckoutCheckFailed.php',
   'currency' => 'IDR',
   'fees' => [
     [
@@ -49,19 +50,16 @@ $CreateInvoice = \Xendit\Invoice::create($Parameter);
 print_r($CreateInvoice);
 
 $xendit_id = $CreateInvoice['id'];
-$product_id = $CreateInvoice['external_id'];
 $status = $CreateInvoice['status'];
-$amount = $CreateInvoice['amount'];
-$description = $CreateInvoice['description'];
 $invoice_url = $CreateInvoice['invoice_url'];
 $created = $CreateInvoice['created'];
 
 //Insert To Database
-$sql = "INSERT INTO orderlist(xendit_id, product_id, description, amount, email_buyer, email_seller, catatan, status, created)
-values('".$xendit_id."','".$product_id. "','".$description."','".$amount."','".$email_buyer."','".$email_seller."','".$catatan."','".$created."','".$status."')";
+$sql = "INSERT INTO orderlist(xendit_id, product_id, namatoko, judul, waktu_pengiriman, deskripsi, harga, sample1, email_buyer, email_seller, catatan, status, created, invoice_url)
+values('".$xendit_id."','".$id."','".$namatoko."','".$judul."','".$waktu_pengiriman."','".$deskripsi."','".$harga."','".$sample1."','".$email_buyer."','".$email_seller."','".$catatan."','".$status."','".$created."','".$invoice_url."')";
 $result = $conn->query($sql);
-
 header('location:'.$invoice_url);
+
 
 
 

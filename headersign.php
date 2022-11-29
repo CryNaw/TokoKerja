@@ -17,36 +17,42 @@
     <nav class="navbar navbar-expand-lg bg-success bg-gradient py-1">     
       <div class="container-fluid">
         
-          <a class="navbar-brand text-white" href="SearchProduct.php">TokoKerja</a>   
-          
-          <div class="position-absolute start-50 translate-middle-x">
-          <form class="d-flex" role="search" action="SearchProduct.php" method="GET">
-          <input class="form-control me-2" type="search" placeholder="Pencarian" aria-label="search" name="search">
-          <button class="btn btn-light" type="submit">Cari</button>
-          </form>
-          </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button> 
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="SellerPublishProduct.php">Tambahkan Produk</a>
-                    </li>
-                    <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Akun
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 200px;"><b class="px-2"><?php echo $_SESSION['email'] ?></b></p>
-                            </li>
-                            <li><a class="dropdown-item" href="SellerProfile.php">Profil</a></li>
-                            <li><a class="dropdown-item" href="Logout.php">Keluar</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>                             
+        <a class="navbar-brand text-white" href="SearchProduct.php">TokoKerja</a>   
+        
+        <div class="position-absolute start-50 translate-middle-x">
+        <form class="d-flex" role="search" action="SearchProduct.php" method="GET">
+        <input class="form-control me-2" type="search" placeholder="Pencarian" aria-label="search" name="search">
+        <button class="btn btn-light" type="submit">Cari</button>
+        </form>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button> 
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="SellerProductList.php">Produk Anda</a>
+              </li>
+
+              <li>
+                <a class="nav-link text-white" href="SellerOrderList.php">Pesanan Anda</a>
+              </li>
+
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Akun
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                      <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 200px;"><b class="px-2"><?php echo $_SESSION['email'] ?></b></p>
+                  </li>
+                  <li><a class="dropdown-item" href="TransactionList.php">Daftar Transaksi</a></li>
+                  <li><a class="dropdown-item" href="SellerProfile.php">Profil</a></li>                  
+                  <li><a class="dropdown-item" href="Logout.php">Keluar</a></li>
+                  </ul>
+                </li>                    
+            </ul>
+          </div>                             
       </div>                
     </nav>   
 

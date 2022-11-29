@@ -9,6 +9,7 @@ $judul = $_POST['judul'];
 $namatoko = $_POST['namatoko']; 
 $deskripsi = $_POST['deskripsi']; 
 $harga = $_POST['harga'];
+$sample1 = $_POST['sample1'];
 $waktu_pengiriman = $_POST['waktu_pengiriman']
 ?>
 
@@ -73,6 +74,7 @@ $waktu_pengiriman = $_POST['waktu_pengiriman']
           <input form="pembayaran" type="hidden" name="namatoko" value ="<?php echo $namatoko?>"></input>
           <input form="pembayaran" type="hidden" name="deskripsi" value="<?php echo $deskripsi?>"></input>
           <input form="pembayaran" type="hidden" name="harga" value="<?php echo $harga?>"></input>            
+          <input form="pembayaran" type="hidden" name="sample1" value="<?php echo $sample1?>"></input>            
           <input form="pembayaran" type="hidden" name="waktu_pengiriman" value="<?php echo $waktu_pengiriman?>"></input>        
           <input form="pembayaran" class="pay-button" style="width: 80%; margin:10px;" type="submit" name="Bayar" value="Bayar"></input>        
         </div>

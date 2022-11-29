@@ -34,7 +34,7 @@ require 'Header.php';
   <div class="d-grid gap-2 d-md-block mt-1">
   <button class="btn btn-success" type="button">Button</button>
   <button class="btn btn-success" type="button">Button</button>
-</div>
+  </div>
   </li>
 </div>
 </ul>

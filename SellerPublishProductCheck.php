@@ -5,12 +5,13 @@ $email = $_SESSION['email'];
 
 if(isset($_POST['submit'])){
 
-  $statement = $conn->prepare("Insert into productlist (email, judul, kategori, deskripsi, harga, sample1, sample2, sample3) values (?,?,?,?,?,?,?,?)");  
-  $statement->bind_param("ssssisss", $email, $judul, $kategori, $deskripsi, $harga, $newfilename0, $newfilename1 ,$newfilename2);
+  $statement = $conn->prepare("Insert into productlist (email, judul, kategori, deskripsi, waktu_pengiriman, harga, sample1, sample2, sample3) values (?,?,?,?,?,?,?,?,?)");  
+  $statement->bind_param("ssssiisss", $email, $judul, $kategori, $deskripsi,$waktu_pengiriman , $harga, $newfilename0, $newfilename1 ,$newfilename2);
 
   $judul  = $_POST['judul'];
   $kategori = $_POST['kategori'];
   $deskripsi = $_POST['deskripsi'];
+  $waktu_pengiriman = $_POST['waktu_pengiriman'];
   $harga = $_POST['harga'];  
   $sample = array($_FILES['sample1'],$_FILES['sample2'],$_FILES['sample3']);
 
@@ -42,6 +43,7 @@ if(isset($_POST['submit'])){
   $newfilename2 = $newfilename[2];  
   $statement->execute();      
   echo"Successfully Added";  
+  header('location:SellerProductList.php');
 }
 
 ?>

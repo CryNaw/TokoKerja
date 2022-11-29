@@ -7,6 +7,7 @@
 use Psr\Http\Message\RequestInterface;
 
   require "Header.php";  
+  require "UserLoginCheck.php";
   require "UserNamaTokoCheck.php";
   ?>
 
@@ -77,6 +78,18 @@ use Psr\Http\Message\RequestInterface;
       </div>
 
       <div class="row justify-content-center marginbot-10">
+        <div class="col-md-2 text-left">
+          Waktu Pengiriman
+        </div>       
+        <div class="col-md-1">
+          <input class="textbox" style="text-align:center;" type="numeric" min="1" max="99" name="waktu_pengiriman" placeholder="1" value="1">
+        </div>
+        <div class="col-md-5 text-left">
+          Hari
+        </div> 
+      </div>
+      
+      <div class="row justify-content-center marginbot-10">
         <div class="col-md-1 text-left">
           Harga
         </div>
@@ -84,10 +97,10 @@ use Psr\Http\Message\RequestInterface;
           Rp.
         </div>
         <div class="col-md-6">
-          <input class="textbox" type="number" min="25000" name="harga">
+          <input class="textbox" type="numeric" min="25000" name="harga" placeholder="25000" value="25000">
         </div>
       </div>
-
+      
       <div class="row justify-content-center marginbot-10">
         <div class="col-md-2 text-left">
           Images

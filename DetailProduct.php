@@ -10,8 +10,6 @@ if(isset($_SESSION['email'])){
   $current_email = "";
 }
 
-
-
 if($result->num_rows > 0){
   while($row = $result->fetch_assoc()){
     $id = $row['id'];
@@ -87,22 +85,22 @@ if($result->num_rows > 0){
 }
 
 .text-ellipsis--2 {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    white-space: normal;
-  }
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
 
-  .text-ellipsis--6 {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
-    white-space: normal;
-  }
+.text-ellipsis--6 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
 </style>
 
 
@@ -169,11 +167,12 @@ if($result->num_rows > 0){
             <input type="hidden" name="namatoko" value ="<?php echo $namatoko?>"></input>
             <input type="hidden" name="deskripsi" value="<?php echo $deskripsi?>"></input>
             <input type="hidden" name="harga" value="<?php echo $harga?>"></input>            
+            <input type="hidden" name="sample1" value="<?php echo $sample[0]?>"></input>            
             <input type="hidden" name="waktu_pengiriman" value="<?php echo $waktu_pengiriman?>"></input>       
             <input type="submit" class="continue-button" style="width:80%; margin:10px;" value="Continue"></input>       
             </form>        
           <?php } else{ ?>
-            <a href="editproduct.php?id=<?php echo $id?>"><button class="continue-button" style="width:80%; margin:10px;">Edit</button></a>
+            <a href="SellerEditProduct.php?id=<?php echo $id?>"><button class="continue-button" style="width:80%; margin:10px;">Edit</button></a>
           <?php } ?>                 
         </div>
       </div>          
