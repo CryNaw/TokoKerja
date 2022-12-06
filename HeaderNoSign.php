@@ -18,7 +18,7 @@
       <div class="container-fluid">
         
           <a class="navbar-brand text-white" href="SearchProduct.php">TokoKerja</a> 
-          <div class="position-absolute start-50 translate-middle-x">
+          <div class="position-absolute start-50 translate-middle-x fixed-top" style="margin-top: 5px;">
           <form class="d-flex" role="search" action="SearchProduct.php" method="GET">
           <input class="form-control me-2" type="search" placeholder="Pencarian" aria-label="search" name="search">
           <button class="btn btn-light " type="submit">Cari</button>

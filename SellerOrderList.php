@@ -53,6 +53,15 @@ require 'UserNamaTokoCheck.php';
   border-width: 3px;
 }
 
+.text-ellipsis--1 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
 .text-ellipsis--2 {
   text-overflow: ellipsis;
   overflow: hidden;
@@ -87,28 +96,36 @@ require 'UserNamaTokoCheck.php';
       if($result->num_rows > 0 ){
         while($row = $result->fetch_assoc()){
           $id = $row['id'];
-          $judul = $row['judul'];
-          $kategori = $row['kategori'];          
+          $judul = $row['judul'];  
+          $email_buyer = $row['email_buyer'];               
           $harga = $row['harga'];
-          $waktu_pengiriman = $row['waktu_pengiriman'];
+          $waktu_pemesanan = $row['waktu_pemesanan'];
+          $waktu_tenggat = $row['waktu_tenggat'];
+          $waktu_pengiriman =$row['waktu_pengiriman'];
+          $status = $row['status'];
           $sample1 = $row['sample1'];           
+
+          $currenttime = new DateTime(Date('Y-m-d H:i:s'));   
+          $waktu_tenggat = new DateTime($waktu_tenggat);       
+          $sisawaktu = $currenttime->diff($waktu_tenggat); 
       ?>
-  <a class="box" href="DetailProduct.php?id=<?php echo $id?>">
+  <a class="box" href="DetailOrder.php?id=<?php echo $id?>">
     <div class="row">
-    <div class="col-6 col-md-3">
+    <div class="col-6 col-md-2">
         <img src=<?php echo $sample1?> class="resize-image">
       </div>  
       <div class="col-6 col-md-3">
         <p class="text-ellipsis--2"><?php echo $judul?></p>
-      </div>        
-      <div class="col-6 col-md-2">
-        <?php echo $kategori ?>  
-      </div>
-      <div class="col-6  col-md-2">
-        Rp. <?php echo $harga ?>  
+        Harga : Rp. <?php echo $harga ?>          
+      </div>              
+      <div class="col-6  col-md-3">
+        <p class="text-ellipsis--2"><?php echo $email_buyer?></p>        
       </div>
       <div class="col-6 col-md-2">
-        Waktu Pengiriman : <?php echo $waktu_pengiriman ?>  
+        Sisa Waktu : <?php echo $sisawaktu ?>  
+      </div>
+      <div class="col-6 col-md-2">
+        Status : <?php echo $status ?>  
       </div>
     </div>
   </a>

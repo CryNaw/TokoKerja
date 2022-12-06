@@ -25,9 +25,8 @@ $judul = $_POST['judul'];
 $namatoko = $_POST['namatoko']; 
 $deskripsi = $_POST['deskripsi']; 
 $harga = $_POST['harga'];
+$waktu_pengerjaan = $_POST['waktu_pengerjaan'];
 $sample1 = $_POST['sample1'];
-$waktu_pengiriman = $_POST['waktu_pengiriman'];
-
 $catatan = $_POST['catatan'];
 
 $Parameter = [    
@@ -52,11 +51,13 @@ print_r($CreateInvoice);
 $xendit_id = $CreateInvoice['id'];
 $status = $CreateInvoice['status'];
 $invoice_url = $CreateInvoice['invoice_url'];
-$created = $CreateInvoice['created'];
+
+$waktu_pemesanan = date("Y-m-d H:i:s");
+$waktu_tenggat = date("Y-m-d H:i:s", strtotime("+ ".$waktu_pengerjaan."days"));
 
 //Insert To Database
-$sql = "INSERT INTO orderlist(xendit_id, product_id, namatoko, judul, waktu_pengiriman, deskripsi, harga, sample1, email_buyer, email_seller, catatan, status, created, invoice_url)
-values('".$xendit_id."','".$id."','".$namatoko."','".$judul."','".$waktu_pengiriman."','".$deskripsi."','".$harga."','".$sample1."','".$email_buyer."','".$email_seller."','".$catatan."','".$status."','".$created."','".$invoice_url."')";
+$sql = "INSERT INTO orderlist(xendit_id, product_id, namatoko, judul,waktu_pengerjaan, waktu_pemesanan, waktu_tenggat, deskripsi, harga, sample1, email_buyer, email_seller, catatan, status, invoice_url)
+values('".$xendit_id."','".$id."','".$namatoko."','".$judul."','".$waktu_pengerjaan."','".$waktu_pemesanan."','".$waktu_tenggat."','".$deskripsi."','".$harga."','".$sample1."','".$email_buyer."','".$email_seller."','".$catatan."','".$status."','".$invoice_url."')";
 $result = $conn->query($sql);
 header('location:'.$invoice_url);
 

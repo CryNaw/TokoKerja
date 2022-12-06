@@ -95,7 +95,7 @@ require 'UserNamaTokoCheck.php';
           $judul = $row['judul'];
           $kategori = $row['kategori'];          
           $harga = $row['harga'];
-          $waktu_pengiriman = $row['waktu_pengiriman'];
+          $waktu_pengerjaan = $row['waktu_pengerjaan'];
           $sample1 = $row['sample1'];           
       ?>
   <a class="box" href="DetailProduct.php?id=<?php echo $id ?>">
@@ -113,7 +113,7 @@ require 'UserNamaTokoCheck.php';
         Rp. <?php echo $harga ?>  
       </div>
       <div class="col-6 col-md-2">
-        Waktu Pengiriman : <?php echo $waktu_pengiriman ?>  
+        Waktu Pengiriman : <?php echo $waktu_pengerjaan ?>  
       </div>
     </div>
   </a>

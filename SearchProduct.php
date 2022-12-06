@@ -45,45 +45,42 @@
         $sql = "select * from productlist";
         $result = $conn->query($sql);
       }
-      ?>
-
-      <?php
-
+      
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-      ?>
-          <a class="col-4 col-md-4 col-lg-2" style="color:black; text-decoration:none; margin-bottom:10px" href="DetailProduct.php?id=<?php echo $row['id']?>">
+          $id = $row['id'];
+          $sample1 = $row['sample1'];
+          $email = $row['email'];
+          $judul = $row['judul'];
+          $harga = $row['harga'];
+
+          $sql2 = "select namatoko FROM user WHERE email='".$email."'";
+          $result2 = $conn->query($sql2);
+          if ($result2->num_rows > 0) {
+            while ($row2 = $result2->fetch_assoc()) {
+              $namatoko = $row2['namatoko'];
+            }
+          }
+      ?>        
+          <a class="col-6 col-md-4 col-lg-2" style="color:black; text-decoration:none; margin-bottom:10px" href="DetailProduct.php?id=<?php echo $id?>">
             <div class="card h-70">
-              <img class="card-img-top resize-image" src=<?php echo $row['sample1'] ?> alt="Sample1">
+              <img class="card-img-top resize-image" src=<?php echo $sample1 ?> alt="Sample1">
             
               <div class="card-body">
-                <p class="child card-title text-truncate" style="font-weight:bold" >                  
-
-                  <?php 
-                    $sql2 = "select namatoko FROM user WHERE email='".$row['email']."'";
-                    $result2 = $conn->query($sql2);
-                    if ($result2->num_rows > 0) {
-                      while ($row2 = $result2->fetch_assoc()) {
-                        echo $row2['namatoko'];
-                      }
-                    }
-                  ?>
-
-                </p>
-                <p class="child card-title text-truncate text-ellipsis--2"><?php echo $row['judul'] ?></p>
+                <p class="child card-title text-truncate" style="font-weight:bold" ><?php echo $namatoko?></p> 
+                <p class="child card-title text-truncate text-ellipsis--2"><?php echo $judul ?></p>
               </div>
               <div class="card-footer">
-                <p class="child">Rp. <?php echo $row['harga'] ?></p>
+                <p class="child">Rp. <?php echo $harga ?></p>
               </div>
             </div>
-          </a>
+          </a>   
       <?php
         }
       } else {
         echo "Product Not Found";
       }
-      ?>
-
+      ?>                    
     </div>
   </div>
  

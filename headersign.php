@@ -19,7 +19,7 @@
         
         <a class="navbar-brand text-white" href="SearchProduct.php">TokoKerja</a>   
         
-        <div class="position-absolute start-50 translate-middle-x">
+        <div class="position-absolute start-50 translate-middle-x fixed-top" style="margin-top: 5px;">
         <form class="d-flex" role="search" action="SearchProduct.php" method="GET">
         <input class="form-control me-2" type="search" placeholder="Pencarian" aria-label="search" name="search">
         <button class="btn btn-light" type="submit">Cari</button>
@@ -46,7 +46,7 @@
                   <li>
                       <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 200px;"><b class="px-2"><?php echo $_SESSION['email'] ?></b></p>
                   </li>
-                  <li><a class="dropdown-item" href="TransactionList.php">Daftar Transaksi</a></li>
+                  <li><a class="dropdown-item" href="PurchaseList.php">Daftar Pembelian</a></li>
                   <li><a class="dropdown-item" href="SellerProfile.php">Profil</a></li>                  
                   <li><a class="dropdown-item" href="Logout.php">Keluar</a></li>
                   </ul>

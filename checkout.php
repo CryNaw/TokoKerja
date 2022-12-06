@@ -10,7 +10,7 @@ $namatoko = $_POST['namatoko'];
 $deskripsi = $_POST['deskripsi']; 
 $harga = $_POST['harga'];
 $sample1 = $_POST['sample1'];
-$waktu_pengiriman = $_POST['waktu_pengiriman']
+$waktu_pengerjaan = $_POST['waktu_pengerjaan']
 ?>
 
 <style>
@@ -52,7 +52,7 @@ $waktu_pengiriman = $_POST['waktu_pengiriman']
       <h3><?php echo $judul ?></h3>
       <h5><?php echo nl2br($deskripsi)?></h5>
       <br>
-      <h5>Waktu Pengerjaan : <?php echo $waktu_pengiriman ?> Hari</h5>
+      <h5>Waktu Pengerjaan : <?php echo $waktu_pengerjaan ?> Hari</h5>
       <hr>
       <h3>Catatan</h3>
       <div>        
@@ -75,7 +75,7 @@ $waktu_pengiriman = $_POST['waktu_pengiriman']
           <input form="pembayaran" type="hidden" name="deskripsi" value="<?php echo $deskripsi?>"></input>
           <input form="pembayaran" type="hidden" name="harga" value="<?php echo $harga?>"></input>            
           <input form="pembayaran" type="hidden" name="sample1" value="<?php echo $sample1?>"></input>            
-          <input form="pembayaran" type="hidden" name="waktu_pengiriman" value="<?php echo $waktu_pengiriman?>"></input>        
+          <input form="pembayaran" type="hidden" name="waktu_pengerjaan" value="<?php echo $waktu_pengerjaan?>"></input>        
           <input form="pembayaran" class="pay-button" style="width: 80%; margin:10px;" type="submit" name="Bayar" value="Bayar"></input>        
         </div>
       </div>

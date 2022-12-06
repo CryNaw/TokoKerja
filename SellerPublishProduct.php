@@ -23,6 +23,7 @@ use Psr\Http\Message\RequestInterface;
     border-width: thin;
     border-color: round;
   }
+  
 
   .marginbot-10 {
     margin-bottom: 10px;
@@ -47,7 +48,7 @@ use Psr\Http\Message\RequestInterface;
           Judul
         </div>
         <div class="col-md-6">
-          <input class="textbox" type="text" name="judul">
+          <input class="textbox" type="text" name="judul" required>
         </div>
       </div>
 
@@ -56,7 +57,7 @@ use Psr\Http\Message\RequestInterface;
           Kategori
         </div>
         <div class="col-md-6">
-          <select class="textbox text-center" name="kategori">
+          <select class="textbox text-center" name="kategori" required>
             <option value="desain_dan_grafis">Desain dan Grafis</option>
             <option value="penulisan_dan_penerjemahan">Penulisan dan Penerjemahan</option>
             <option value="web_dan_pemrograman">Web dan Pemrograman</option>
@@ -73,7 +74,7 @@ use Psr\Http\Message\RequestInterface;
           Deskripsi
         </div>
         <div class="col-md-6">
-          <textarea class="textbox" rows="12" form="publishproduct" name="deskripsi"></textarea>
+          <textarea class="textbox" rows="12" form="publishproduct" name="deskripsi" required></textarea>
         </div>
       </div>
 
@@ -82,7 +83,7 @@ use Psr\Http\Message\RequestInterface;
           Waktu Pengiriman
         </div>       
         <div class="col-md-1">
-          <input class="textbox" style="text-align:center;" type="numeric" min="1" max="99" name="waktu_pengiriman" placeholder="1" value="1">
+          <input class="textbox" style="text-align:center;" type="numeric" min="1" max="99" name="waktu_pengiriman" placeholder="1" value="1" required>
         </div>
         <div class="col-md-5 text-left">
           Hari
@@ -90,15 +91,15 @@ use Psr\Http\Message\RequestInterface;
       </div>
       
       <div class="row justify-content-center marginbot-10">
-        <div class="col-md-1 text-left">
+        <div class="col-md-2">
           Harga
+        </div>        
+        <div class="col-md-1">
+          <input class="textbox" type="numeric" min="25000" name="harga" placeholder="25000" value="25000" required>
         </div>
-        <div class="col-md-1 text-right">
-          Rp.
-        </div>
-        <div class="col-md-6">
-          <input class="textbox" type="numeric" min="25000" name="harga" placeholder="25000" value="25000">
-        </div>
+        <div class="col-md-5">
+          Rupiah
+        </div>   
       </div>
       
       <div class="row justify-content-center marginbot-10">
@@ -109,17 +110,17 @@ use Psr\Http\Message\RequestInterface;
           <div class="row">
             <div class="col">
               <label for="sampleimage">Cover</label>
-              <input id="sampleimage" class="textbox" type="file" accept="image/*" name="sample1">
+              <input id="sampleimage" class="textbox" type="file" accept="image/*" name="sample1" required>
             </div>
 
             <div class="col">
               <label for="sampleimage2">Sample 2</label>
-              <input id="sampleimage2" class="textbox" type="file" accept="image/*" name="sample2">
+              <input id="sampleimage2" class="textbox" type="file" accept="image/*" name="sample2" required>
             </div>
 
             <div class="col">
               <label for="sampleimage3">Sample 3</label>
-              <input id="sampleimage3" class="textbox" type="file" accept="image/*" name="sample3">
+              <input id="sampleimage3" class="textbox" type="file" accept="image/*" name="sample3" required>
             </div>
           </div>
         </div>

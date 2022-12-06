@@ -21,6 +21,7 @@ if(isset($_POST['submit'])){
   $extension = array();
   $fileTMPName = array();
   $newfilename = array();
+  $imagesSamples = array();
 
   for($i = 0; $i < count($sample);$i++){    
       $file[$i] = $_FILES['sample'.$i+1];
@@ -34,7 +35,7 @@ if(isset($_POST['submit'])){
         $newfilename[$i] = "";
       }else{
         $newfilename[$i] = "ImagesSamples/$id[$i].$extension[$i]";
-        move_uploaded_file($fileTMPName[$i], $newfilename[$i]);         
+        move_uploaded_file($fileTMPName[$i], $newfilename[$i]);                 
       }            
   } 
 
