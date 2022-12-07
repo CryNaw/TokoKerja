@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2022 at 05:43 AM
+-- Generation Time: Dec 07, 2022 at 04:16 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -33,7 +33,10 @@ CREATE TABLE `orderlist` (
   `product_id` varchar(64) NOT NULL,
   `namatoko` varchar(64) NOT NULL,
   `judul` varchar(256) NOT NULL,
-  `waktu_pengiriman` int(2) NOT NULL,
+  `waktu_pengerjaan` int(2) NOT NULL,
+  `waktu_pemesanan` varchar(64) NOT NULL,
+  `waktu_tenggat` varchar(64) NOT NULL,
+  `waktu_pengiriman` varchar(64) NOT NULL,
   `deskripsi` varchar(1028) NOT NULL,
   `harga` double NOT NULL,
   `sample1` varchar(256) NOT NULL,
@@ -41,7 +44,6 @@ CREATE TABLE `orderlist` (
   `email_seller` varchar(128) NOT NULL,
   `catatan` varchar(1028) NOT NULL,
   `status` varchar(32) NOT NULL,
-  `created` varchar(128) NOT NULL,
   `invoice_url` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -49,8 +51,8 @@ CREATE TABLE `orderlist` (
 -- Dumping data for table `orderlist`
 --
 
-INSERT INTO `orderlist` (`id`, `xendit_id`, `product_id`, `namatoko`, `judul`, `waktu_pengiriman`, `deskripsi`, `harga`, `sample1`, `email_buyer`, `email_seller`, `catatan`, `status`, `created`, `invoice_url`) VALUES
-(6, '6385ceb0aa73a26984e65b06', '35', 'Cylan', 'Genshin Illustraion', 3, 'Great Choice!', 250000, '', '1@gmail.com', 'erwinlowandy@gmail.com', 'coba ji be dulu', 'PENDING', '2022-11-29T09:19:45.102Z', '');
+INSERT INTO `orderlist` (`id`, `xendit_id`, `product_id`, `namatoko`, `judul`, `waktu_pengerjaan`, `waktu_pemesanan`, `waktu_tenggat`, `waktu_pengiriman`, `deskripsi`, `harga`, `sample1`, `email_buyer`, `email_seller`, `catatan`, `status`, `invoice_url`) VALUES
+(10, '638ec6cef4425a079134c45e', '47', 'Cylan', 'indahnya', 24, '2022-12-06 05:36:50', '2022-12-30 05:36:50', '', 'wowowowo', 25900000, 'ImagesSamples/638ec1f7b0319.jpg', '1@gmail.com', 'erwinlowandy@gmail.com', '', 'PENDING', 'https://checkout-staging.xendit.co/web/638ec6cef4425a079134c45e');
 
 -- --------------------------------------------------------
 
@@ -65,7 +67,7 @@ CREATE TABLE `productlist` (
   `kategori` varchar(256) NOT NULL,
   `deskripsi` text NOT NULL,
   `deskripsi_pendek` varchar(64) NOT NULL,
-  `waktu_pengiriman` int(2) NOT NULL,
+  `waktu_pengerjaan` int(2) NOT NULL,
   `harga` int(16) NOT NULL,
   `sample1` varchar(256) NOT NULL,
   `sample2` varchar(256) NOT NULL,
@@ -76,13 +78,10 @@ CREATE TABLE `productlist` (
 -- Dumping data for table `productlist`
 --
 
-INSERT INTO `productlist` (`id`, `email`, `judul`, `kategori`, `deskripsi`, `deskripsi_pendek`, `waktu_pengiriman`, `harga`, `sample1`, `sample2`, `sample3`) VALUES
-(35, 'erwinlowandy@gmail.com', 'Genshin Illustraion', 'desain_dan_grafis', 'Great Choice!', '1 full body with 10 accesories of your choices', 3, 250000, 'ImagesSamples/6367af8b204be.jpg', 'ImagesSamples/6367af8b205e4.jpg', 'ImagesSamples/6367af8b206f9.jpg'),
-(37, 'erwinlowandy@gmail.com', 'adjfa', 'desain_dan_grafis', 'ladjksflksa', '', 1, 2151251, 'ImagesSamples/6367b0c6c0974.jpg', '', ''),
-(38, 'erwinlowandy@gmail.com', 'Asiap', 'desain_dan_grafis', 'adflkjas\r\nadlkfjasdl\r\n\r\n\r\nadsklfjadlksf\r\n\r\n\r\nadslkfjalskfjas\r\n\r\naldsfjlkasjf\r\ndskafjasd\r\naldsjflkadsjfklsajflkdasjoifdwajakjfbdsaliufdkndbwij,kjmsdaoifjglkjweoigjlkajhsdkf,a\r\nfjkasdhflkjdasbfjkasd\r\nnkliajdshfkjdbnsafsda\r\nfkdsjahl.sd', '', 1, 25000000, 'ImagesSamples/636b227fd5376.jpg', 'ImagesSamples/636b227fd567a.jpg', 'ImagesSamples/636b227fd57b2.jpg'),
-(39, 'erwinlowandy@gmail.com', 'adsfas', 'desain_dan_grafis', 'fasfasfsa\r\nadsfasf\r\nasfdas\r\nfdas\r\nfdsa\r\nf\r\nadsf\r\ndsaf\r\ndsa\r\nfdsaf', '', 1, 2500000, 'ImagesSamples/636b3829dc8c8.jpg', '', ''),
-(40, 'erwinlowandy@gmail.com', 'coba kalau kita kasi judul yang panjang sekali apakah bisa tidak ditampilkan dengan baik', 'desain_dan_grafis', 'coba kalau kita kasi judul yang panjang sekali apakah bisa tidak ditampilkan dengan baik\r\ncoba kalau kita kasi judul yang panjang sekali apakah bisa tidak ditampilkan dengan baik\r\ncoba kalau kita kasi judul yang panjang sekali apakah bisa tidak ditampilkan dengan baik\r\ncoba kalau kita kasi judul yang panjang sekali apakah bisa tidak ditampilkan dengan baikcoba kalau kita kasi judul yang panjang sekali apakah bisa tidak ditampilkan dengan baik', '', 1, 25000000, 'ImagesSamples/6385ba3b5b685.jpg', 'ImagesSamples/6385ba3b5b923.png', 'ImagesSamples/6385ba3b5ba4c.jpg'),
-(42, '1@gmail.com', 'toko1', 'desain_dan_grafis', 'toko1', '', 1, 25000, 'ImagesSamples/6385cd8ab0034.png', '', '');
+INSERT INTO `productlist` (`id`, `email`, `judul`, `kategori`, `deskripsi`, `deskripsi_pendek`, `waktu_pengerjaan`, `harga`, `sample1`, `sample2`, `sample3`) VALUES
+(45, '1@gmail.com', 'adsfadsfafdasfsa', 'desain_dan_grafis', 'adsf', '', 12, 22341, 'ImagesSamples/638eb196e48c6.jpg', 'ImagesSamples/638eb3235313f.jpg', 'ImagesSamples/638eb2a79ca9a.jpg'),
+(46, '1@gmail.com', 'Genshin Illustration', 'desain_dan_grafis', 'mantap', '', 1, 25000, 'ImagesSamples/638eb5398d70f.jpg', 'ImagesSamples/638eb7ff437a6.jpg', 'ImagesSamples/638eb80d4ca21.jpg'),
+(47, 'erwinlowandy@gmail.com', 'indahnya', 'desain_dan_grafis', 'wowowowo', '', 24, 25900000, 'ImagesSamples/638ec1f7b0319.jpg', 'ImagesSamples/638ec1f7b0464.png', 'ImagesSamples/638ec1f7b059b.jpg');
 
 -- --------------------------------------------------------
 
@@ -158,13 +157,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `orderlist`
 --
 ALTER TABLE `orderlist`
-  MODIFY `id` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `productlist`
 --
 ALTER TABLE `productlist`
-  MODIFY `id` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
