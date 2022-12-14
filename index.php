@@ -91,25 +91,25 @@
     <div class="container overflow-hidden text-center">
         <div class="row gy-5">
             <div class="col-6">
-                <div class="p-3 border bg-success bg-gradient text-white">
+                <div class="p-3 border bg-light bg-gradient">
                     <h3>1. Cari</h3>
                     <p>Cari freelancer yang sesuai dengan kebutuhan anda dengan melihat portofolio, kemampuan, dan ulasan.</p>
                 </div>
             </div>
             <div class="col-6">
-                <div class="p-3 border bg-success bg-gradient text-white">
+                <div class="p-3 border bg-light bg-gradient">
                     <h3>2. Berdiskusi</h3>
                     <p>Diskusikan detail pekerjaan yang anda butuhkan dan diskusikan penawaran harga dari freelancer.</p>
                 </div>
             </div>
             <div class="col-6">
-                <div class="p-3 border bg-success bg-gradient text-white">
+                <div class="p-3 border bg-light bg-gradient ">
                     <h3>3. Bayar</h3>
                     <p>Pembayaran melalui Profil Kerja dijamin aman.</p>
                 </div>
             </div>
             <div class="col-6">
-                <div class="p-3 border bg-success bg-gradient text-white">
+                <div class="p-3 border bg-light bg-gradient ">
                     <h3>4. Setujui dan berikan ulasan</h3>
                     <p>Setujui hasil kerja freelancer dan berikan ulasan</p>
                 </div>
