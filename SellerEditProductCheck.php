@@ -3,21 +3,20 @@
 require 'Header.php';
 $email = $_SESSION['email'];
 if(isset($_POST['submit'])){
-  $statement = $conn->prepare("UPDATE productlist SET judul=?, kategori=?, deskripsi=?, waktu_pengiriman=?, harga=? WHERE id=?");  
-  $statement->bind_param("sssiii", $judul, $kategori, $deskripsi, $waktu_pengiriman , $harga, $id_product);
+  $statement = $conn->prepare("UPDATE productlist SET judul=?, kategori=?, deskripsi=?, waktu_pengerjaan=?, harga=? WHERE id=?");  
+  $statement->bind_param("sssiii", $judul, $kategori, $deskripsi, $waktu_pengerjaan , $harga, $id_product);
 
   $id_product = $_POST['id'];
   $judul  = $_POST['judul'];
   $kategori = $_POST['kategori'];
   $deskripsi = $_POST['deskripsi'];
-  $waktu_pengiriman = $_POST['waktu_pengiriman'];
+  $waktu_pengerjaan = $_POST['waktu_pengerjaan'];
   $harga = $_POST['harga'];    
 
   $statement->execute();      
 }
-  // sample1=?, sample2=?, sample3=? 
-  // $newfilename0, $newfilename1 ,$newfilename2
 
+if(isset($_POST['submit'])){
   $sample1 =$_FILES['sample1'];  
   $sample2 =$_FILES['sample2'];     
   $sample3 =$_FILES['sample3'];       
@@ -53,8 +52,7 @@ if(isset($_POST['submit'])){
       $statement->execute(); 
     }                   
   }   
-
-
-  echo"Successfully Added";
-  header('location:SellerProductList.php'); 
+}
+echo"Successfully Added";
+header('location:SellerProductList.php'); 
 ?>

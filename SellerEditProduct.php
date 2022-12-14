@@ -20,7 +20,7 @@ use Psr\Http\Message\RequestInterface;
       $judul = $row['judul'];                      
       $kategori = $row['kategori'];
       $deskripsi = $row['deskripsi'];
-      $waktu_pengiriman = $row['waktu_pengiriman'];      
+      $waktu_pengerjaan = $row['waktu_pengerjaan'];      
       $harga = $row['harga'];
       $sample1 = $row['sample1'];  
       $sample2 = $row['sample2'];  
@@ -104,10 +104,10 @@ use Psr\Http\Message\RequestInterface;
 
       <div class="row justify-content-center marginbot-10">
         <div class="col-md-2 text-left">
-          Waktu Pengiriman
+          Waktu Pengerjaan
         </div>       
         <div class="col-md-1">
-          <input class="textbox" style="text-align:center;" type="numeric" min="1" max="99" name="waktu_pengiriman" value="<?php echo $waktu_pengiriman ?>">
+          <input class="textbox" style="text-align:center;" type="numeric" min="1" max="99" name="waktu_pengerjaan" value="<?php echo $waktu_pengerjaan ?>">
         </div>
         <div class="col-md-5 text-left">
           Hari

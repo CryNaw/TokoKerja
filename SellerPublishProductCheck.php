@@ -5,13 +5,13 @@ $email = $_SESSION['email'];
 
 if(isset($_POST['submit'])){
 
-  $statement = $conn->prepare("Insert into productlist (email, judul, kategori, deskripsi, waktu_pengiriman, harga, sample1, sample2, sample3) values (?,?,?,?,?,?,?,?,?)");  
-  $statement->bind_param("ssssiisss", $email, $judul, $kategori, $deskripsi,$waktu_pengiriman , $harga, $newfilename0, $newfilename1 ,$newfilename2);
+  $statement = $conn->prepare("Insert into productlist (email, judul, kategori, deskripsi, waktu_pengerjaan, harga, sample1, sample2, sample3) values (?,?,?,?,?,?,?,?,?)");  
+  $statement->bind_param("ssssiisss", $email, $judul, $kategori, $deskripsi,$waktu_pengerjaan , $harga, $newfilename0, $newfilename1 ,$newfilename2);
 
   $judul  = $_POST['judul'];
   $kategori = $_POST['kategori'];
   $deskripsi = $_POST['deskripsi'];
-  $waktu_pengiriman = $_POST['waktu_pengiriman'];
+  $waktu_pengerjaan = $_POST['waktu_pengerjaan'];
   $harga = $_POST['harga'];  
   $sample = array($_FILES['sample1'],$_FILES['sample2'],$_FILES['sample3']);
 

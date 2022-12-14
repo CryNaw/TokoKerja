@@ -105,9 +105,10 @@ require 'UserNamaTokoCheck.php';
           $status = $row['status'];
           $sample1 = $row['sample1'];           
 
-          $currenttime = new DateTime(Date('Y-m-d H:i:s'));   
-          $waktu_tenggat = new DateTime($waktu_tenggat);       
-          $sisawaktu = $currenttime->diff($waktu_tenggat); 
+          $currenttime = strtotime(Date('Y-m-d H:i:s'));
+          $waktu_tenggat = strtotime($waktu_tenggat);       
+          $difference =  $waktu_tenggat - $currenttime;  
+          $sisawaktu  = abs(round($difference / 86400));   
       ?>
   <a class="box" href="DetailOrder.php?id=<?php echo $id?>">
     <div class="row">
