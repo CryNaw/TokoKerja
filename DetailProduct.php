@@ -106,7 +106,7 @@ if($result->num_rows > 0){
 
 <body>
 <div class="container">  
-  <div class="row">  
+  <div class="row">
     <h1 class="text-truncate text-ellipsis--2"><?php echo $judul;?></h1>
 
     <div class="col-12 col-md-8" >              

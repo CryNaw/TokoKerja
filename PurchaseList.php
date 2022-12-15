@@ -105,7 +105,7 @@ require 'UserNamaTokoCheck.php';
           $status = $row['status'];                     
           $invoice_url = $row['invoice_url'];
       ?>
-  <a class="box" href="DetailProduct.php?id=<?php echo $id ?>">
+  <a class="box" href="DetailOrder.php?id=<?php echo $id ?>">
     <div class="row">
       <div class="col-6 col-md-4">
         <p>
