@@ -52,7 +52,7 @@
     <div class="text-center">
       <h1 style="margin-top:30px; font-weight:bold;">Register</h1>
       <form action="RegisterCheck.php" method="post">
-        <input class="textbox" type="email" placeholder="Enter Your Email" name="email"><br>
+        <input class="textbox" type="email" placeholder="Enter Your Username" name="email"><br>
         <input class="textbox" type="password" placeholder="Password" name="password"><br>
         <input class="submit bg-success bg-gradient" type="submit" value="Register">
       </form>

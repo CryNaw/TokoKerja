@@ -51,7 +51,7 @@
     <div class="text-center fontfamily">
         <h1 style="margin-top:30px; font-weight:bold;">Login</h1>
         <form action="LoginCheck.php" method="post">
-            <input class="textbox" type="email" placeholder="Enter Your Email" name="email"><br>
+            <input class="textbox" type="email" placeholder="Enter Your Username" name="email"><br>
             <input class="textbox" type="password" placeholder="Password" name="password"><br>
             <input class="submit bg-success bg-gradient" type="submit" value="Login">
         </form>

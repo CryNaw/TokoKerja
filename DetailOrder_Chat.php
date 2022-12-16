@@ -13,16 +13,31 @@ if($result->num_rows > 0){
     $sender_email = $row['Sender_Email'];
     $Message = $row['Message'];
     $Files = $row['Files'];
-    $Files_extention = pathinfo($Files, PATHINFO_EXTENSION);
-    
+        
     if($current_email == $sender_email){
       if($Message){
-        echo "<p class='border p-1' style='text-align:right;'>".$Message."</p>";
+        if($Files == ""){             
+          echo "<p class='border rounded p-1 m-1' style='text-align:right;'>".$Message."<span style='color:green'> | </span></p>";                                          
+        }
+        else{                       
+          echo "<div class='border rounded p-1 m-1' style='text-align:right;'>";            
+          echo "<a href='$Files' style='text-decoration: none;' download><img src='img/DownloadSGV.png' style='width:32px;height:20px;'>$Files<span style='color:green'> | </span></a>";                              
+          echo "<p>".$Message."<span style='color:green'> | </span></p>";  
+          echo "</div>";          
+        }                      
       }
     }
     else{
       if($Message){
-        echo "<p class='border p-1' style='text-align:left;'>".$Message."</p>";
+        if($Files == ""){
+          echo "<p class='border rounded p-1 m-1' style='text-align:left;'><span style='color:green'> | </span>".$Message."</p>";                      
+        }
+        else{      
+          echo "<div class='border rounded p-1 m-1' style='text-align:left;'>";                  
+          echo "<a href='$Files' style='text-decoration: none;' download><span style='color:green;'> | </span><img src='img/DownloadSGV.png' style='width:32px;height:20px;'>$Files</a>";                  
+          echo "<p><span style='color:green'> | </span>".$Message."</p>";  
+          echo "</div>";
+        }                      
       }
     }
   }

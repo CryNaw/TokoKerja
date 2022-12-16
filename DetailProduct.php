@@ -109,7 +109,7 @@ if($result->num_rows > 0){
   <div class="row">
     <h1 class="text-truncate text-ellipsis--2"><?php echo $judul;?></h1>
 
-    <div class="col-12 col-md-8" >              
+    <div class="col-12 col-lg-8" >              
       <?php    
         foreach($sample as $value){
         if($value != ""){              
@@ -148,12 +148,8 @@ if($result->num_rows > 0){
       </div>
     </div>    
 
-    <div class="col-12 col-md-4">
-      <div class="row border">
-        <h1 class="text-truncate text-ellipsis--2"><?php echo $judul?></h1>
-        <p class="text-truncate text-ellipsis--6"><?php echo  $deskripsi_pendek; ?></p>
-        <p>Waktu Pengerjaan : <?php echo $waktu_pengerjaan?> hari</p>
-        <br>
+    <div class="col-12 col-lg-4">
+      <div class="row border">                         
         <p style="font-weight:bold; font-size:30px; color:green;">Rp. <?php echo $harga; ?></p>
         
         
@@ -194,7 +190,8 @@ if($result->num_rows > 0){
   <div class="row">        
     <div class="col-12 col-md-8">      
       <h2>Deskripsi Produk</h2>
-      <p><?php echo nl2br($deskripsi)?></p>     
+      <p><?php echo nl2br($deskripsi)?></p>   
+      <p><b>Waktu Pengerjaan : </b><?php echo $waktu_pengerjaan?> hari</p>  
       <hr>
       <h2>Seller</h2>
       <p><?php echo $namatoko?></p>      
