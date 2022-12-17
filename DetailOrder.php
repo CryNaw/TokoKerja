@@ -50,7 +50,7 @@ if($current_email == $email_buyer or $current_email == $email_seller){
   object-position: center center;
 }
 
-.text-ellipsis--2 {
+.text-ellipsis--6 {
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box !important;
@@ -63,23 +63,22 @@ if($current_email == $email_buyer or $current_email == $email_seller){
 <head>
 
 
-<!-- <script> 
-$("#SendButton").submit(function(e) {
+<script> 
+$("#statusbutton").click(function(e) {  
   e.preventDefault();
   $.ajax({
-    url: "DetailOrder_Chat_Insert.php",
+    url: "DetailOrder_StatusUpdate.php",
     type: "POST",
     data: {
       order_id: <?php echo $order_id ?>,
-      Sender_Email: "<?php echo $current_email ?>",
-      Message: "coba be",
+      
     },            
     success: function(data){
         $("#results").html(data);        
     }    
   });
 });
-</script> -->
+</script>
 </head>
 
 <body>  
@@ -99,43 +98,76 @@ $("#SendButton").submit(function(e) {
                                                         
                     <div class="col-sm-12 align-self-center text-center">  
                     <img src=<?php echo $sample1?> class="resize-image">        
-                      <p class="text-truncate text-ellipsis--2"><b><?php echo $judul?></b><br>Rp. <?php echo $harga ?></p>         
+                      <p class="text-truncate text-ellipsis--6"><b><?php echo $judul?></b><br><?php echo $deskripsi ?><br>Rp. <?php echo $harga ?></p>         
                                                                             
                     </div>                                 
                   </div>
 
                   <div class="row">
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-12 col-xl-4">
                       <p><b>Nama Toko : </b><?php echo $namatoko ?></p>     
                     </div>
-                    <div class="col-sm-6 col-md-3">  
-                      <p class="text-truncate text-ellipsis--2"><b>Judul : </b><?php echo $judul?></p>                                                                    
+                    <div class="col-12 col-xl-4">  
+                      <p><b>Waktu Pemesanan : </b><?php echo $waktu_pemesanan?></p>                                                                    
                     </div>
-                    <div class="col-sm-6 col-md-3">  
-                      <p><b>Harga : </b>Rp. <?php echo $harga ?></p>                                                     
+                    <div class="col-12 col-xl-4">  
+                      <p class="text-truncate text-ellipsis--2"><b>Catatan : </b><?php echo $catatan?></p>                                                                                                       
+                    </div>                                      
+                    <div class="col-12 col-xl-4">  
+                      <p><b>Buyer : </b><?php echo $email_buyer ?></p> 
+                    </div> 
+                    <div class="col-12 col-xl-4">
+                      <p><b>Seller : </b><?php echo $email_seller ?></p>                                                                   
+                    </div>                      
+                    <div class="col-12 col-xl-4">
+                      <p><b>Status : </b><?php echo $status ?></p>                                                                                                                                                      
                     </div>
-                    <div class="col-sm-6 col-md-3">  
-                      <p><b>Harga : </b>Rp. <?php echo $harga ?></p>                                                                   
-                    </div>                   
                   </div>
-
-                  <div class="row">
-                    <div class="col-sm-6 col-md-3">
-                      <p><b>Harga : </b>Rp. <?php echo $harga ?></p>     
-                    </div>
-                    <div class="col-sm-6 col-md-3">  
-                      <p class="text-truncate text-ellipsis--2"><b>Judul : </b><?php echo $judul?></p>                                                                    
-                    </div>
-                    <div class="col-sm-6 col-md-3">  
-                      <p><b>Harga : </b>Rp. <?php echo $harga ?></p>                                                                   
-                    </div>
-                    <div class="col-sm-6 col-md-3">  
-                      <p><b>Harga : </b>Rp. <?php echo $harga ?></p>                                                                   
-                    </div>                   
-                  </div>
-
+                                                    
                 </div>
-              </a></li>                                               
+              </a></li>   
+              <li>
+                <form id="statusform" method="POST" action="DetailOrder_StatusUpdate.php"></form>
+                <input form="statusform" type="text" name="order_id" value="<?php echo $order_id ?>" hidden>
+                <?php 
+                  $status_PENDING = "PENDING";
+                  $status_PAID = "PAID";
+                  $status_DALAMPROSES = "DALAM PROSES";
+                  $status_DIKIRIM = "DIKIRIM";                  
+                  $status_SELESAI = "SELESAI";
+                  $status_DIBATALKAN = "DIBATALKAN";
+
+                if($current_email == $email_seller){
+                  if($status == $status_PENDING){         
+                    echo "<div class='row justify-content-center'><button style='width:80%; color:green;'>Menunggu Pembayaran</button></div>";
+                  }elseif($status == $status_PAID){
+                    echo "<div class='row justify-content-center'><button form='statusform' type='submit' name='status' value='$status_DALAMPROSES' style='width:80%; color:green;'>TERIMA PESANAN</button></div>";
+                  }elseif($status == $status_DALAMPROSES){
+                    echo "<div class='row justify-content-center'><button form='statusform' type='submit' name='status' value='$status_DIKIRIM' style='width:80%; color:green;'>PESANAN DIKIRIM</button></div>";
+                  }elseif($status == $status_DIKIRIM){
+                    echo "<div class='row justify-content-center'><button style='width:80%; color:green;'>Menunggu Tanggapan Pembeli</button></div>";               
+                  }elseif($status == $status_SELESAI){         
+                    echo "<div class='row justify-content-center'><button style='width:80%; color:green;'>PESANAN SELESAI</button></div>";
+                  }elseif($status == $status_DIBATALKAN){         
+                    echo "<div class='row justify-content-center'><button style='width:80%; color:green;'>PESANAN DIBATALKAN</button></div>";                    
+                  }
+                }elseif($current_email == $email_buyer){
+                  if($status == $status_PENDING){         
+                    echo "<a class='row justify-content-center' href='$invoice_url' style='text-decoration:none;'><button style='width:80%; color:green;'>Klik Disini Untuk Melakukan Pembayaran</button></a>";
+                  }elseif($status == $status_PAID){
+                    echo "<div class='row justify-content-center'><button style='width:80%; color:green;'>Menunggu Tanggapan Penjual</button></div>";
+                  }elseif($status == $status_DALAMPROSES){
+                    echo "<div class='row justify-content-center'><button style='width:80%; color:green;'>Dalam Proses Pengerjaan</button></div>";
+                  }elseif($status == $status_DIKIRIM){
+                    echo "<div class='row justify-content-center'><button form='statusform' type='submit' name='status' value='$status_SELESAI' style='width:80%; color:green;'>PESANAN DITERIMA</button></div>";
+                  }elseif($status == $status_SELESAI){         
+                    echo "<div class='row justify-content-center'><button style='width:80%; color:green;'>PESANAN SELESAI</button></div>";
+                  }elseif($status == $status_DIBATALKAN){         
+                    echo "<div class='row justify-content-center'><button style='width:80%; color:green;'>PESANAN DIBATALKAN</button></div>";                    
+                  }
+                }                                  
+                ?>
+              </li>                                            
             </ul>
           </div>
         </div>      
@@ -156,25 +188,25 @@ $("#SendButton").submit(function(e) {
                   if($current_email == $sender_email){
                     if($Message){
                       if($Files == ""){             
-                        echo "<p class='border rounded p-1 m-1' style='text-align:right;'>".$Message."<span style='color:green'> | </span></p>";                                          
+                        echo "<p class='border rounded p-1 m-1' style='text-align:right;'>".$Message."<span style='color:green'> | </span></p>";
                       }
-                      else{                       
-                        echo "<div class='border rounded p-1 m-1' style='text-align:right;'>";            
-                        echo "<a href='$Files' style='text-decoration: none;' download><img src='img/DownloadSGV.png' style='width:32px;height:20px;'>$Files<span style='color:green'> | </span></a>";                              
-                        echo "<p>".$Message."<span style='color:green'> | </span></p>";  
-                        echo "</div>";          
-                      }                      
+                      else{
+                        echo "<div class='border rounded p-1 m-1' style='text-align:right;'>";
+                        echo "<a href='$Files' style='text-decoration: none;' download><img src='img/DownloadSGV.png' style='width:32px;height:20px;'>$Files<span style='color:green'> | </span></a>";
+                        echo "<p>".$Message."<span style='color:green'> | </span></p>";
+                        echo "</div>";
+                      }    
                     }
                   }
                   else{
                     if($Message){
                       if($Files == ""){
-                        echo "<p class='border rounded p-1 m-1' style='text-align:left;'><span style='color:green'> | </span>".$Message."</p>";                      
+                        echo "<p class='border rounded p-1 m-1' style='text-align:left;'><span style='color:green'> | </span>".$Message."</p>";                     
                       }
                       else{      
-                        echo "<div class='border rounded p-1 m-1' style='text-align:left;'>";                  
-                        echo "<a href='$Files' style='text-decoration: none;' download><span style='color:green;'> | </span><img src='img/DownloadSGV.png' style='width:32px;height:20px;'>$Files</a>";                  
-                        echo "<p><span style='color:green'> | </span>".$Message."</p>";  
+                        echo "<div class='border rounded p-1 m-1' style='text-align:left;'>";              
+                        echo "<a href='$Files' style='text-decoration: none;' download><span style='color:green;'> | </span><img src='img/DownloadSGV.png' style='width:32px;height:20px;'>$Files</a>";
+                        echo "<p><span style='color:green'> | </span>".$Message."</p>"; 
                         echo "</div>";
                       }                      
                     }
@@ -186,7 +218,7 @@ $("#SendButton").submit(function(e) {
         </div>
         <form id="ChatForm" method="post" action="DetailOrder_Chat_Insert.php" enctype="multipart/form-data"></form>  
         <div class="card-footer w-100 p-1">
-          <div class="input-group">   
+          <div class="input-group">  
             <div class="input-group-text border-0">
               <label for="chatfile" class="btn btn-light">                
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-paperclip" viewBox="0 0 16 16">
@@ -234,14 +266,7 @@ $("#chatfile").change(function(){
     else{
       $("#chatfilename").text(this.files[0].name);
     }    
-});
-
-
-  
-
-
-    
-     
+});           
 </script>
 
 

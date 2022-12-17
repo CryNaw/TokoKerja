@@ -67,37 +67,37 @@
         <div class="collapse navbar-collapse  justify-content-center" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a href="grafisdandesain.php" class="nav-link text-center"><img src="img/graphic-design.png" width="48" height="48">
+              <a href="SearchProduct.php?kategori=desain_dan_grafis" class="nav-link text-center"><img src="img/graphic-design.png" width="48" height="48">
                 <figcaption>Desain dan Grafis</figcaption>
               </a>
             </li>
             <li class="nav-item">
-              <a href="penulisandanpenerjemahan.php" class="nav-link text-center"><img src="img/typing.png" width="48" height="48">
+              <a href="SearchProduct.php?kategori=penulisan_dan_penerjemahan" class="nav-link text-center"><img src="img/typing.png" width="48" height="48">
                 <figcaption>Penulisan dan Penerjemahan</figcaption>
               </a>
             </li>
             <li class="nav-item">
-              <a href="webdanpemrograman.php" class="nav-link text-center"><img src="img/coding.png" width="48" height="48">
+              <a href="SearchProduct.php?kategori=web_dan_pemrograman" class="nav-link text-center"><img src="img/coding.png" width="48" height="48">
                 <figcaption>Web dan Pemrograman</figcaption>
               </a>
             </li>
             <li class="nav-item">
-              <a href="visualdanstudio.php" class="nav-link text-center"><img src="img/camera.png" width="48" height="48">
+              <a href="SearchProduct.php?kategori=visual_dan_studio" class="nav-link text-center"><img src="img/camera.png" width="48" height="48">
                 <figcaption>Visual dan Studio</figcaption>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pemasarandanperiklanan.php" class="nav-link text-center"><img src="img/growth.png" width="48" height="48">
+              <a href="SearchProduct.php?kategori=pemasaran_dan_periklanan" class="nav-link text-center"><img src="img/growth.png" width="48" height="48">
                 <figcaption>Pemasaran dan Periklanan</figcaption>
               </a>
             </li>
             <li class="nav-item">
-              <a href="jasakonsultasi.php" class="nav-link text-center"><img src="img/brainstorming.png" width="48" height="48">
+              <a href="SearchProduct.php?kategori=jasa_konsultasi" class="nav-link text-center"><img src="img/brainstorming.png" width="48" height="48">
                 <figcaption>Jasa Konsultasi</figcaption>
               </a>
             </li>
             <li class="nav-item">
-              <a href="gayahidup.php" class="nav-link text-center"><img src="img/lifestyle.png" width="48" height="48">
+              <a href="SearchProduct.php?kategori=gaya_hidup" class="nav-link text-center"><img src="img/lifestyle.png" width="48" height="48">
                 <figcaption>Gaya Hidup</figcaption>
               </a>
             </li>

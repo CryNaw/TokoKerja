@@ -104,27 +104,30 @@ require 'UserNamaTokoCheck.php';
           $catatan = $row['catatan'];
           $status = $row['status'];                     
           $invoice_url = $row['invoice_url'];
+
+          $currenttime = strtotime(Date('Y-m-d H:i:s'));
+          $waktu_tenggat = strtotime($waktu_tenggat);       
+          $difference =  $waktu_tenggat - $currenttime;  
+          $sisawaktu  = abs(round($difference / 86400));   
       ?>
-  <a class="box" href="DetailOrder.php?id=<?php echo $id ?>">
+  <a class="box" href="DetailOrder.php?id=<?php echo $id?>">
     <div class="row">
-      <div class="col-6 col-md-4">
-        <p>
-          <span class="text-ellipsis--2"><?php echo $email_seller?></span>
-          <span class="text-ellipsis--2"><?php echo $namatoko ?></span>
-        </p>
+    <div class="col-6 col-md-2">
+        <img src=<?php echo $sample1?> class="resize-image">
       </div>  
-      <div class="col-6  col-md-4">
-        <p>
-          <span class="text-ellipsis--2"><?php echo $judul?></span>
-          <span class="text-ellipsis--2"><?php echo $deskripsi ?></span>
-        </p>
-      </div>  
+      <div class="col-6 col-md-3">
+        <p class="text-ellipsis--2">Judul : <?php echo $judul?></p>
+        Harga : Rp. <?php echo $harga ?>          
+      </div>              
+      <div class="col-6  col-md-3">
+        <p class="text-ellipsis--2"><b>Seller : </b><?php echo $email_seller?></p>        
+      </div>
       <div class="col-6 col-md-2">
-        <p class="text-ellipsis--2">Rp. <?php echo $harga?></p>        
-      </div>                     
+        <b>Sisa Waktu : </b><?php echo $sisawaktu ?>  
+      </div>
       <div class="col-6 col-md-2">
-        <p class="text-ellipsis--2">status : <?php echo $status ?></p>
-      </div>      
+        Status : <?php echo $status ?>  
+      </div>
     </div>
   </a>
 <?php 

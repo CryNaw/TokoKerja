@@ -6,6 +6,7 @@
 
 use Psr\Http\Message\RequestInterface;
 
+//ini Callback token juga nanti ada dikasi di website Xendit
 $xenditXCallbackToken = "AYvgkriNauGLMBGLyl2IOlTQWAr2zT7xntF9Zes1AsOMwSur";
 
 // Bagian ini untuk mendapatkan Token callback dari permintaan header, 
@@ -26,6 +27,7 @@ $arrRequestInput = json_decode($rawRequestInput, true);
 echo 'iya sudah ada bang';
 print_r($arrRequestInput);
 
+//ambil semua file dari dikirim Xendit setelah dilakukan pembayaran
 $xendit_id = $arrRequestInput['id'];
 $external_id = $arrRequestInput['external_id'];
 $userId = $arrRequestInput['user_id'];
@@ -35,6 +37,7 @@ $paidAt = $arrRequestInput['paid_at'];
 $paymentChannel = $arrRequestInput['payment_channel'];
 $paymentDestination = $arrRequestInput['payment_destination'];
 
+//isi di database datanya
 require 'ConnectDatabase.php';
 $sql = "update orderlist set status = ".$status." where xendit_id = ".$xendit_id."";
 $conn->query($sql);

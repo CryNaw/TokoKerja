@@ -5,8 +5,10 @@
   <?php
   require "Header.php";
 
-  if (($_GET != null)) {
-    $searchtext = $_GET['search'];
+  if (isset($_GET['search'])){
+    $searchtext = $_GET['search'];        
+  }elseif(isset($_GET['kategori'])) {
+    $searchtextkategori = $_GET['kategori'];
   }
 
   ?>
@@ -38,10 +40,14 @@
   <div class="container">
     <div class="row justify-content-center">
       <?php
-      if (isset($_GET['search']) and ($searchtext != null)) {
+
+      if ((isset($_GET['search'])) AND ($searchtext != null)) {
         $sql = "select * FROM productlist WHERE judul LIKE '%$searchtext%'";
         $result = $conn->query($sql);
-      } else {
+      }elseif ((isset($_GET['kategori'])) AND ($searchtextkategori != null)) {
+        $sql = "select * FROM productlist WHERE kategori LIKE '%$searchtextkategori%'";
+        $result = $conn->query($sql);
+      }else{
         $sql = "select * from productlist";
         $result = $conn->query($sql);
       }
@@ -63,7 +69,7 @@
           }
       ?>        
           <a class="col-6 col-md-4 col-lg-2" style="color:black; text-decoration:none; margin-bottom:10px" href="DetailProduct.php?id=<?php echo $id?>">
-            <div class="card h-70">
+            <div class="card h-100">
               <img class="card-img-top resize-image" src=<?php echo $sample1 ?> alt="Sample1">
             
               <div class="card-body">

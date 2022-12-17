@@ -17,7 +17,7 @@ if($result->num_rows > 0){
     if($current_email == $sender_email){
       if($Message){
         if($Files == ""){             
-          echo "<p class='border rounded p-1 m-1' style='text-align:right;'>".$Message."<span style='color:green'> | </span></p>";                                          
+          echo "<div class='border rounded p-1 m-1' style='text-align:right;'>".$Message."<span style='color:green'> | </span></div>";                                          
         }
         else{                       
           echo "<div class='border rounded p-1 m-1' style='text-align:right;'>";            
