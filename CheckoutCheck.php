@@ -37,8 +37,8 @@ $Parameter = [
   'amount' => $harga+$harga*3/100,     
   'description' => $judul,
   'payer_email' => $email_buyer,
-  'success_redirect_url' => 'https=>//www.tokokerja.com/CheckoutCheckSuccess.php',
-  'failure_redirect_url' => 'https=>//www.tokokerja.com/CheckoutCheckFailed.php',
+  'success_redirect_url' => 'https://www.tokokerja.com/SearchProduct.php',
+  'failure_redirect_url' => 'https://www.tokokerja.com/SearchProduct.php',
   'currency' => 'IDR',
   'fees' => [
     [

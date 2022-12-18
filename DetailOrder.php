@@ -159,7 +159,9 @@ $("#statusbutton").click(function(e) {
                   }elseif($status == $status_DALAMPROSES){
                     echo "<div class='row justify-content-center'><button style='width:80%; color:green;'>Dalam Proses Pengerjaan</button></div>";
                   }elseif($status == $status_DIKIRIM){
-                    echo "<div class='row justify-content-center'><button form='statusform' type='submit' name='status' value='$status_SELESAI' style='width:80%; color:green;'>PESANAN DITERIMA</button></div>";
+                    echo "<input form='statusform' type='text' name='harga' value='$harga' hidden>";
+                    echo "<input form='statusform' type='text' name='email_seller' value='$email_seller' hidden>";
+                    echo "<div class='row justify-content-center'><button form='statusform' type='submit' name='status' value='$status_SELESAI' style='width:80%; color:green;'>PESANAN DITERIMA</button></div>";                                     
                   }elseif($status == $status_SELESAI){         
                     echo "<div class='row justify-content-center'><button style='width:80%; color:green;'>PESANAN SELESAI</button></div>";
                   }elseif($status == $status_DIBATALKAN){         
@@ -175,7 +177,7 @@ $("#statusbutton").click(function(e) {
         <div class="card-body p-4" style="height:512px; overflow:auto;">      
           <div id="ChatText">            
             <?php
-              $sql = "Select * from Chat_log Where Order_id =".$order_id;
+              $sql = "Select * from chat_log Where order_id =".$order_id;
               $result = $conn->query($sql);
               if($result->num_rows > 0){
                 while($row = $result->fetch_assoc()){

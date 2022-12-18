@@ -114,7 +114,7 @@ if($result->num_rows > 0){
         foreach($sample as $value){
         if($value != ""){              
       ?>              
-          <img src="<?php echo $value ?>" class="mySlides resize-image" style="background-color:rgb(248, 248, 248)">                      
+        <img src="<?php echo $value ?>" class="mySlides resize-image" style="background-color:rgb(248, 248, 248)">                      
       <?php
         }
       }
@@ -155,7 +155,7 @@ if($result->num_rows > 0){
         
         <div class="text-center">
           <?php if($current_email != $email){ ?>
-            <form action="checkout.php" method="post">
+            <form action="Checkout.php" method="post">
             <input type="hidden" name="email_buyer" value="<?php echo $current_email?>"></input>
             <input type="hidden" name="email_seller" value="<?php echo $email?>"></input>
             <input type="hidden" name="id" value="<?php echo $id?>"></input>
