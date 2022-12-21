@@ -1,7 +1,6 @@
 <?php
 require 'Header.php';
 require 'UserLoginCheck.php';
-require 'UserNamaTokoCheck.php';
 ?>
 
 <style>
@@ -102,8 +101,8 @@ require 'UserNamaTokoCheck.php';
           $email_buyer = $row['email_buyer'];          
           $email_seller = $row['email_seller'];
           $catatan = $row['catatan'];
-          $status = $row['status'];                     
-          $invoice_url = $row['invoice_url'];
+          $status = $row['status'];              
+          $invoice_url = $row['invoice_url'];             
 
           $currenttime = strtotime(Date('Y-m-d H:i:s'));
           $waktu_tenggat = strtotime($waktu_tenggat);       

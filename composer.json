@@ -1,5 +1,5 @@
 {
     "require": {
-        "xendit/xendit-php": "^2.19"
+      "duitkupg/duitku-php": "dev-master"
     }
 }

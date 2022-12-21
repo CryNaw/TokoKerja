@@ -83,7 +83,7 @@ use Psr\Http\Message\RequestInterface;
           Waktu Pengerjaan
         </div>       
         <div class="col-md-1">
-          <input class="textbox" style="text-align:center;" type="numeric" min="1" max="99" name="waktu_pengerjaan" placeholder="1" value="1" required>
+          <input class="textbox" style="text-align:center;" type="number" min="1" max="99" name="waktu_pengerjaan" placeholder="1" value="1" required>
         </div>
         <div class="col-md-5 text-left">
           Hari
@@ -95,7 +95,7 @@ use Psr\Http\Message\RequestInterface;
           Harga
         </div>        
         <div class="col-md-1">
-          <input class="textbox" type="numeric" min="25000" name="harga" placeholder="25000" value="25000" required>
+          <input class="textbox" type="number" min="25000" name="harga" placeholder="25000" value="25000" required>
         </div>
         <div class="col-md-5">
           Rupiah

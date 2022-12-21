@@ -107,7 +107,7 @@ use Psr\Http\Message\RequestInterface;
           Waktu Pengerjaan
         </div>       
         <div class="col-md-1">
-          <input class="textbox" style="text-align:center;" type="numeric" min="1" max="99" name="waktu_pengerjaan" value="<?php echo $waktu_pengerjaan ?>">
+          <input class="textbox" style="text-align:center;" type="number" min="1" max="99" name="waktu_pengerjaan" value="<?php echo $waktu_pengerjaan ?>">
         </div>
         <div class="col-md-5 text-left">
           Hari
@@ -122,7 +122,7 @@ use Psr\Http\Message\RequestInterface;
           Rp.
         </div>
         <div class="col-md-6">
-          <input class="textbox" type="numeric" min="25000" name="harga" placeholder="25000" value="<?php echo $harga ?>">
+          <input class="textbox" type="number" min="25000" name="harga" placeholder="25000" value="<?php echo $harga ?>">
         </div>
       </div>
       

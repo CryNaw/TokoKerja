@@ -9,8 +9,7 @@
   $result = $conn->query($sql);
   if($result->num_rows > 0){
     while($row = $result->fetch_assoc()){
-      $id = $row['id'];
-      $xendit_id = $row['xendit_id'];
+      $id = $row['id'];      
       $product_id = $row['product_id'];
       $namatoko = $row['namatoko'];      
       $judul = $row['judul'];  
@@ -25,8 +24,7 @@
       $email_seller = $row['email_seller'];     
       $catatan = $row['catatan'];
       $status = $row['status'];
-      $invoice_url = $row['invoice_url'];       
-      
+      $invoice_url = $row['invoice_url'];             
       $currenttime = strtotime(Date('Y-m-d H:i:s'));
       $waktu_tenggat = strtotime($waktu_tenggat);       
       $difference =  $waktu_tenggat - $currenttime;  

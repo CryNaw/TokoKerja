@@ -11,7 +11,7 @@ if ($result->num_rows > 0){
     echo "Your username is already registered";
 }
 else{
-    $sql = "INSERT INTO user(email,password,verified) values('".$email."','".$password."','1)";
+    $sql = "INSERT INTO user(email,password,verified) values('".$email."','".$password."','1')";
     $conn->query($sql);
     header('Location:Login.php');
 }

@@ -1,52 +1,54 @@
 <?php
+    $apiKey = 'd967e1c1b1b804b9e1ac40287c6b0c24'; // API key anda
+    $merchantCode = isset($_POST['merchantCode']) ? $_POST['merchantCode'] : null; 
+    $amount = isset($_POST['amount']) ? $_POST['amount'] : null; 
+    $merchantOrderId = isset($_POST['merchantOrderId']) ? $_POST['merchantOrderId'] : null; 
+    $productDetail = isset($_POST['productDetail']) ? $_POST['productDetail'] : null; 
+    $additionalParam = isset($_POST['additionalParam']) ? $_POST['additionalParam'] : null; 
+    $paymentCode = isset($_POST['paymentCode']) ? $_POST['paymentCode'] : null; 
+    $resultCode = isset($_POST['resultCode']) ? $_POST['resultCode'] : null; 
+    $merchantUserId = isset($_POST['merchantUserId']) ? $_POST['merchantUserId'] : null; 
+    $reference = isset($_POST['reference']) ? $_POST['reference'] : null; 
+    $signature = isset($_POST['signature']) ? $_POST['signature'] : null; 
 
-// Ini akan menjadi Token Verifikasi Callback Anda yang dapat Anda peroleh dari dasbor.
-// Pastikan untuk menjaga kerahasiaan token ini dan tidak mengungkapkannya kepada siapa pun.
-// Token ini akan digunakan untuk melakukan verfikasi pesan callback bahwa pengirim callback tersebut adalah Xendit
+    //log callback untuk debug 
+    // file_put_contents('callback.txt', "* Callback *\r\n", FILE_APPEND | LOCK_EX);
 
-use Psr\Http\Message\RequestInterface;
+    if(!empty($merchantCode) && !empty($amount) && !empty($merchantOrderId) && !empty($signature))
+    {
+        $params = $merchantCode . $amount . $merchantOrderId . $apiKey;
+        $calcSignature = md5($params);
 
-//ini Callback token juga nanti ada dikasi di website Xendit
-$xenditXCallbackToken = "AYvgkriNauGLMBGLyl2IOlTQWAr2zT7xntF9Zes1AsOMwSur";
+        if($signature == $calcSignature)
+        {
+          //Callback tervalidasi
+          //isi di database datanya
+          //Silahkan rubah status transaksi anda disini
+            if($resultCode == '00'){
+              $status ='PAID';
+            }
+            else{
+              $status = 'FAILED';
+            }
 
-// Bagian ini untuk mendapatkan Token callback dari permintaan header, 
-// yang kemudian akan dibandingkan dengan token verifikasi callback Xendit
-$reqHeaders = getallheaders();
-$xIncomingCallbackTokenHeader = isset($reqHeaders['x-callback-token']) ? $reqHeaders['x-callback-token'] : "";
+            require 'ConnectDatabase.php';
+            $sql = "update orderlist set status = ".$status." where xendit_id = ".$xendit_id;
+            $conn->query($sql);
 
-// Untuk memastikan permintaan datang dari Xendit
-// Anda harus membandingkan token yang masuk sama dengan token verifikasi callback Anda
-// Ini untuk memastikan permintaan datang dari Xendit dan bukan dari pihak ketiga lainnya.
-if($xIncomingCallbackTokenHeader === $xenditXCallbackToken){
-// Permintaan masuk diverifikasi berasal dari Xendit
+            $sql = "insert into xendit_log (id) values ()";
+            $conn->query($sql);                        
+            // file_put_contents('callback.txt', "* Berhasil *\r\n\r\n", FILE_APPEND | LOCK_EX);
 
-// Baris ini untuk mendapatkan semua input pesan dalam format JSON teks mentah
-$rawRequestInput = file_get_contents("php://input");
-// Baris ini melakukan format input mentah menjadi array asosiatif
-$arrRequestInput = json_decode($rawRequestInput, true);
-print_r($arrRequestInput);
-
-//ambil semua file dari dikirim Xendit setelah dilakukan pembayaran
-$xendit_id = $arrRequestInput['id'];
-$external_id = $arrRequestInput['external_id'];
-$userId = $arrRequestInput['user_id'];
-$status = $arrRequestInput['status'];
-$paidAmount = $arrRequestInput['paid_amount'];
-$paidAt = $arrRequestInput['paid_at'];
-$paymentChannel = $arrRequestInput['payment_channel'];
-$paymentDestination = $arrRequestInput['payment_destination'];
-
-//isi di database datanya
-require 'ConnectDatabase.php';
-$sql = "update orderlist set status = ".$status." where xendit_id = ".$xendit_id;
-$conn->query($sql);
-
-$sql = "insert into xendit_log (id) values ()";
-$conn->query($sql);
-
-  // Kamu bisa menggunakan array objek diatas sebagai informasi callback yang dapat digunaka untuk melakukan pengecekan atau aktivas tertentu di aplikasi atau sistem kamu.
-
-}else{
-  // Permintaan bukan dari Xendit, tolak dan buang pesan dengan HTTP status 403
-  http_response_code(403);
-}
+        }
+        else
+        {
+            // file_put_contents('callback.txt', "* Bad Signature *\r\n\r\n", FILE_APPEND | LOCK_EX);
+            throw new Exception('Bad Signature');
+        }
+    }
+    else
+    {
+        // file_put_contents('callback.txt', "* Bad Parameter *\r\n\r\n", FILE_APPEND | LOCK_EX);
+        throw new Exception('Bad Parameter');
+    }
+?>

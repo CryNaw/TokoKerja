@@ -14,5 +14,5 @@ if(isset($_SESSION['email'])){
   }  
 }
 else{ 
-  header('location:login.php');
+  header('location:Login.php');
 }
