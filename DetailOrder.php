@@ -269,7 +269,9 @@ $("#chatfile").change(function(){
 });           
 </script>
 
-
+<?php
+require 'Footer.php';
+?>
 
 
 

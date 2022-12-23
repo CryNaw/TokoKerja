@@ -235,3 +235,7 @@ function commify(n) {
 
 
 </body>
+
+<?php
+require 'Footer.php';
+?>

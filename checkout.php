@@ -86,5 +86,5 @@ $waktu_pengerjaan = $_POST['waktu_pengerjaan'];
 </div>
 
 <?php
-
+require 'Footer.php';
 ?>

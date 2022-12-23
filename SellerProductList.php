@@ -122,4 +122,3 @@ require 'UserNamaTokoCheck.php';
   }
   ?>
 </div>
-

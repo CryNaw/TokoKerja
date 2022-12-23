@@ -179,3 +179,7 @@ use Psr\Http\Message\RequestInterface;
 </body>
 
 </html>
+
+<?php
+require 'Footer.php';
+?>

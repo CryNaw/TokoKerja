@@ -68,7 +68,7 @@
             }
           }
       ?>        
-          <a class="col-6 col-md-4 col-lg-2" style="color:black; text-decoration:none; margin-bottom:10px" href="DetailProduct.php?id=<?php echo $id?>">
+          <a class="col-12 col-md-6 col-lg-4" style="color:black; text-decoration:none; margin-bottom:10px" href="DetailProduct.php?id=<?php echo $id?>">
             <div class="card h-100">
               <img class="card-img-top resize-image" src=<?php echo $sample1 ?> alt="Sample1">
             
@@ -94,3 +94,7 @@
 </body>
 
 </html>
+
+<?php
+require 'Footer.php';
+?>
