@@ -96,8 +96,7 @@ $("#statusbutton").click(function(e) {
                                                         
                     <div class="col-sm-12 align-self-center text-center">  
                     <img src=<?php echo $sample1?> class="resize-image">        
-                      <p class="text-truncate text-ellipsis--6"><b><?php echo $judul?></b><br><?php echo $deskripsi ?><br>Rp. <?php echo $harga ?></p>         
-                                                                            
+                      <p class="text-ellipsis--6"><b><?php echo $judul?></b><br><?php echo $deskripsi ?><br>Rp. <?php echo $harga ?></p>                                                                            
                     </div>                                 
                   </div>
 
