@@ -13,7 +13,9 @@ if ($result->num_rows > 0){
 else{
     $sql = "INSERT INTO user(email,password,verified) values('".$email."','".$password."','1')";
     $conn->query($sql);
-    header('Location:Login.php');
+    //Mengisi email di Session
+    $_SESSION['email'] = $email;
+    header('Location:index.php');
 }
 
 ?>

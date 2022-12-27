@@ -101,8 +101,7 @@ require 'UserLoginCheck.php';
           $email_buyer = $row['email_buyer'];          
           $email_seller = $row['email_seller'];
           $catatan = $row['catatan'];
-          $status = $row['status'];              
-          $invoice_url = $row['invoice_url'];             
+          $status = $row['status'];                               
 
           $currenttime = strtotime(Date('Y-m-d H:i:s'));
           $waktu_tenggat = strtotime($waktu_tenggat);       
@@ -122,7 +121,7 @@ require 'UserLoginCheck.php';
         <p class="text-ellipsis--2"><b>Seller : </b><?php echo $email_seller?></p>        
       </div>
       <div class="col-6 col-md-2">
-        <b>Sisa Waktu : </b><?php echo $sisawaktu ?>  
+        <b>Sisa Waktu : </b><?php if($waktu_tenggat == ""){echo 'Menunggu Tanggapan Penjual';}else{ echo $sisawaktu.' Hari';} ?>    
       </div>
       <div class="col-6 col-md-2">
         Status : <?php echo $status ?>  

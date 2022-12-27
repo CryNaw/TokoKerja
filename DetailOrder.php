@@ -23,8 +23,8 @@
       $email_buyer = $row['email_buyer'];     
       $email_seller = $row['email_seller'];     
       $catatan = $row['catatan'];
-      $status = $row['status'];
-      $invoice_url = $row['invoice_url'];             
+      $status = $row['status'];      
+
       $currenttime = strtotime(Date('Y-m-d H:i:s'));
       $waktu_tenggat = strtotime($waktu_tenggat);       
       $difference =  $waktu_tenggat - $currenttime;  
@@ -84,7 +84,7 @@ $("#statusbutton").click(function(e) {
 
   <div class="container mt-4">   
       <div class="card mx-auto" style="max-width:100%;">
-        <div class="card-header">
+      <div class="card-header">
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width:100%">
               Detail Pesanan
@@ -106,7 +106,7 @@ $("#statusbutton").click(function(e) {
                       <p><b>Nama Toko : </b><?php echo $namatoko ?></p>     
                     </div>
                     <div class="col-12 col-xl-4">  
-                      <p><b>Waktu Pemesanan : </b><?php echo $waktu_pemesanan?></p>                                                                    
+                      <p><b>Sisa Waktu : </b><?php if($status == 'PENDING' or $status == 'VERIFYING' or $status == 'PAID'){echo 'Menunggu Tanggapan Penjual';}else{ echo $sisawaktu.' Hari'; }?> </p>
                     </div>
                     <div class="col-12 col-xl-4">  
                       <p class="text-truncate text-ellipsis--2"><b>Catatan : </b><?php echo $catatan?></p>                                                                                                       
@@ -129,7 +129,8 @@ $("#statusbutton").click(function(e) {
                 <input form="statusform" type="text" name="order_id" value="<?php echo $order_id ?>" hidden>
                 <?php 
                   $status_PENDING = "PENDING";
-                  $status_PAID = "PAID";
+                  $status_VERIFYING = "VERIFYING";
+                  $status_PAID = "PAID";                  
                   $status_DALAMPROSES = "DALAM PROSES";
                   $status_DIKIRIM = "DIKIRIM";                  
                   $status_SELESAI = "SELESAI";
@@ -138,32 +139,37 @@ $("#statusbutton").click(function(e) {
                 if($current_email == $email_seller){
                   if($status == $status_PENDING){         
                     echo "<div class='row justify-content-center'><button style='width:80%; color:green;'>Menunggu Pembayaran</button></div>";
-                  }elseif($status == $status_PAID){
+                  }elseif($status == $status_VERIFYING){
+                      echo "<div class='row justify-content-center'><button style='width:80%; color:green;'>Menunggu Verifikasi Pembayaran</button></div>";
+                  }elseif($status == $status_PAID){                 
+                    echo "<input form='statusform' type='text' name='waktu_pengerjaan' value='$waktu_pengerjaan' hidden>";
                     echo "<div class='row justify-content-center'><button form='statusform' type='submit' name='status' value='$status_DALAMPROSES' style='width:80%; color:green;'>TERIMA PESANAN</button></div>";
                   }elseif($status == $status_DALAMPROSES){
                     echo "<div class='row justify-content-center'><button form='statusform' type='submit' name='status' value='$status_DIKIRIM' style='width:80%; color:green;'>PESANAN DIKIRIM</button></div>";
                   }elseif($status == $status_DIKIRIM){
-                    echo "<div class='row justify-content-center'><button style='width:80%; color:green;'>Menunggu Tanggapan Pembeli</button></div>";               
+                    echo "<div class='row justify-content-center'><button style='width:80%; color:black;'>Menunggu Tanggapan Pembeli</button></div>";               
                   }elseif($status == $status_SELESAI){         
-                    echo "<div class='row justify-content-center'><button style='width:80%; color:green;'>PESANAN SELESAI</button></div>";
+                    echo "<div class='row justify-content-center'><button style='width:80%; color:black;'>PESANAN SELESAI</button></div>";
                   }elseif($status == $status_DIBATALKAN){         
-                    echo "<div class='row justify-content-center'><button style='width:80%; color:green;'>PESANAN DIBATALKAN</button></div>";                    
+                    echo "<div class='row justify-content-center'><button style='width:80%; color:black;'>PESANAN DIBATALKAN</button></div>";                    
                   }
                 }elseif($current_email == $email_buyer){
                   if($status == $status_PENDING){         
-                    echo "<a class='row justify-content-center' href='$invoice_url' style='text-decoration:none;'><button style='width:80%; color:green;'>Klik Disini Untuk Melakukan Pembayaran</button></a>";
+                    echo "<a class='row justify-content-center' href='Payment.php?id=$id' style='text-decoration:none;'><button style='width:80%; color:green;'>Klik Disini Untuk Melakukan Pembayaran</button></a>";
+                  }elseif($status == $status_VERIFYING){
+                    echo "<div class='row justify-content-center'><button style='width:80%; color:black;'>Menunggu Verifikasi Pembayaran</button></div>";
                   }elseif($status == $status_PAID){
-                    echo "<div class='row justify-content-center'><button style='width:80%; color:green;'>Menunggu Tanggapan Penjual</button></div>";
+                    echo "<div class='row justify-content-center'><button style='width:80%; color:black;'>Menunggu Tanggapan Penjual</button></div>";
                   }elseif($status == $status_DALAMPROSES){
-                    echo "<div class='row justify-content-center'><button style='width:80%; color:green;'>Dalam Proses Pengerjaan</button></div>";
+                    echo "<div class='row justify-content-center'><button style='width:80%; color:black;'>Dalam Proses Pengerjaan</button></div>";
                   }elseif($status == $status_DIKIRIM){
                     echo "<input form='statusform' type='text' name='harga' value='$harga' hidden>";
                     echo "<input form='statusform' type='text' name='email_seller' value='$email_seller' hidden>";
                     echo "<div class='row justify-content-center'><button form='statusform' type='submit' name='status' value='$status_SELESAI' style='width:80%; color:green;'>PESANAN DITERIMA</button></div>";                                     
                   }elseif($status == $status_SELESAI){         
-                    echo "<div class='row justify-content-center'><button style='width:80%; color:green;'>PESANAN SELESAI</button></div>";
+                    echo "<div class='row justify-content-center'><button style='width:80%; color:black;'>PESANAN SELESAI</button></div>";
                   }elseif($status == $status_DIBATALKAN){         
-                    echo "<div class='row justify-content-center'><button style='width:80%; color:green;'>PESANAN DIBATALKAN</button></div>";                    
+                    echo "<div class='row justify-content-center'><button style='width:80%; color:black;'>PESANAN DIBATALKAN</button></div>";                    
                   }
                 }                                  
                 ?>

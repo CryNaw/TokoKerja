@@ -123,7 +123,7 @@ require 'UserNamaTokoCheck.php';
         <p class="text-ellipsis--2"><?php echo $email_buyer?></p>        
       </div>
       <div class="col-6 col-md-2">
-        Sisa Waktu : <?php echo $sisawaktu ?>  
+        Sisa Waktu : <?php if($waktu_tenggat == ""){echo 'Menunggu Tanggapan Penjual';}else{ echo $sisawaktu.' Hari';} ?>   
       </div>
       <div class="col-6 col-md-2">
         Status : <?php echo $status ?>  

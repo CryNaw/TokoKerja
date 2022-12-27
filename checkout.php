@@ -64,8 +64,15 @@ $waktu_pengerjaan = $_POST['waktu_pengerjaan'];
 
     <div class="col-12 col-md-4">
       <div class="row border rounded">                        
-        <h1>Rp.<?php echo $harga?></h1>       
-        <hr> 
+        <h1>Rp.<?php echo $harga?></h1>
+        <hr>
+        <h3>Metode Pembayaran</h3>
+        <div> 
+        <input form="pembayaran" type="radio" id="bank" name="metodepembayaran" value="Bank" required></input>
+        <label for="bank">Bank Transfer</label>
+        <input form="pembayaran" type="radio" id="ovo" name="metodepembayaran" value="OVO"></input>
+        <label for="ovo">OVO</label>       
+        </div>   
         <div class="text-center">        
           <input form="pembayaran" type="hidden" name="email_buyer" value="<?php echo $email_buyer?>"></input>
           <input form="pembayaran" type="hidden" name="email_seller" value="<?php echo $email_seller?>"></input>
@@ -73,11 +80,10 @@ $waktu_pengerjaan = $_POST['waktu_pengerjaan'];
           <input form="pembayaran" type="hidden" name="judul" value="<?php echo $judul?>"></input>
           <input form="pembayaran" type="hidden" name="namatoko" value ="<?php echo $namatoko?>"></input>
           <input form="pembayaran" type="hidden" name="deskripsi" value="<?php echo $deskripsi?>"></input>
-          <input form="pembayaran" type="hidden" name="harga" value="<?php echo $harga?>"></input>            
-          <input form="pembayaran" type="hidden" name="sample1" value="<?php echo $sample1?>"></input>            
-          <input form="pembayaran" type="hidden" name="waktu_pengerjaan" value="<?php echo $waktu_pengerjaan?>"></input>        
-          <input id="email" form="pembayaran" class="form-control" type="email" name="email" placeholder="Masukkan Email Anda" required></input>                  
-          <input form="pembayaran" class="pay-button" style="width: 80%; margin:10px;" type="submit" name="Bayar" value="Bayar"></input>        
+          <input form="pembayaran" type="hidden" name="harga" value="<?php echo $harga?>"></input>        
+          <input form="pembayaran" type="hidden" name="sample1" value="<?php echo $sample1?>"></input>
+          <input form="pembayaran" type="hidden" name="waktu_pengerjaan" value="<?php echo $waktu_pengerjaan?>"></input>          
+          <button form="pembayaran" class="pay-button" style="width: 80%; margin:10px;" type="submit" name="Bayar" value="Bayar">Bayar</button>
         </div>
       </div>
 

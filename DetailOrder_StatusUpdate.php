@@ -18,6 +18,14 @@ require "ConnectDatabase.php";
     $result = $conn->query($sql);        
   }
 
+  if(isset($_POST['waktu_pengerjaan'])){
+    $waktu_pengerjaan = $_POST['waktu_pengerjaan'];
+
+    $waktu_tenggat = date("Y-m-d H:i:s", strtotime("+ ".$waktu_pengerjaan."days"));
+    $sql = "UPDATE orderlist SET waktu_tenggat='$waktu_tenggat' WHERE id=$order_id";
+    $result = $conn->query($sql);  
+  }  
+
   $sql = "UPDATE orderlist SET status='$status' WHERE id=$order_id";
   $result = $conn->query($sql);    
   header('location:DetailOrder.php?id='.$order_id);

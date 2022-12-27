@@ -113,7 +113,7 @@ require 'UserNamaTokoCheck.php';
         Rp. <?php echo $harga ?>  
       </div>
       <div class="col-6 col-md-2">
-        Waktu Pengerjaan : <?php echo $waktu_pengerjaan ?>  
+        Waktu Pengerjaan : <?php echo $waktu_pengerjaan ?> Hari
       </div>
     </div>
   </a>
