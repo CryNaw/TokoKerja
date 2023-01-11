@@ -235,7 +235,7 @@ $("#statusbutton").click(function(e) {
             </div>                      
             <input form="ChatForm" type="text" name="order_id" value="<?php echo $order_id ?>" hidden>
             <input form="ChatForm" type="text" name="Sender_Email" value="<?php echo $current_email ?>" hidden>
-            <input form="ChatForm" id="chattext" type="text" class="form-control border-0" name="Message" placeholder="Write a message" required>            
+            <input form="ChatForm" id="ChatText" type="text" class="form-control border-0" name="Message" placeholder="Write a message" required>            
             <button form="ChatForm" id="SendButton" type="submit" class="input-group-text border-0">Send</button>
           </div>          
         </div>    
@@ -252,16 +252,13 @@ $("#statusbutton").click(function(e) {
     })    
   };
   
-  setInterval(LoadChat, 1000);  
-
   function ScrollCardBodytoBotttom(){
   const element = document.getElementById("ChatText");
   element.scrollIntoView({behavior: "smooth", block: "end", inline:"nearest"});
   }
-</script>
-
-<script>
+  
   ScrollCardBodytoBotttom()    
+  setInterval(LoadChat, 1000);  
 
   var theFile = document.getElementById('chatfile');
 $("#chatfile").change(function(){    
