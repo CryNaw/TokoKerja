@@ -16,7 +16,6 @@ $metodepembayaran = $_POST['metodepembayaran'];
 
 //Membuat Tanggal menggunakan perintah PHP
 $waktu_pemesanan = date("Y-m-d H:i:s");
-//$waktu_tenggat = date("Y-m-d H:i:s", strtotime("+ ".$waktu_pengerjaan."days"));
 //Insert To Database
 $status = "PENDING";
 $sql = "INSERT INTO orderlist(product_id, namatoko, judul, waktu_pengerjaan, waktu_pemesanan, deskripsi, harga, sample1, email_buyer, email_seller, catatan, status, paymentmethod)
