@@ -1,3 +1,14 @@
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57C6ZZ233V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-57C6ZZ233V');
+</script>
+</head>
 <?php
     $merchantCode = 'DS14346'; // dari duitku
     $merchantKey  = 'd967e1c1b1b804b9e1ac40287c6b0c24'; // dari duitku
